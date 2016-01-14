@@ -1,0 +1,28 @@
+/**
+ * References:
+ *   * https://css-tricks.com/dont-overthink-it-grids/
+ */
+
+.LatestPolls {
+
+}
+
+.LatestPolls-container {
+
+}
+
+.LatestPolls-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.LatestPolls-pollContainer {
+  width: 100%;
+}
+
+.LatestPolls-poll {
+  width: 33%;
+  /*border: solid black 1px;*/
+  float: left;
+}

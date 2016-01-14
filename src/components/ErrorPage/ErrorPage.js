@@ -18,7 +18,7 @@ class ErrorPage extends Component {
     return (
       <div>
         <h1>{title}</h1>
-        <p>Sorry, an critical error occurred on this page.</p>
+        <p>Sorry, a critical error occurred on this page.</p>
       </div>
     );
   }
