@@ -5,6 +5,7 @@ import { Router } from 'express';
 import jade from 'jade';
 import fm from 'front-matter';
 import fs from '../utils/fs';
+import marked from 'marked';
 
 // A folder with Jade/Markdown/HTML content pages
 const CONTENT_DIR = join(__dirname, './content');
@@ -16,45 +17,47 @@ const parseJade = (path, jadeContent) => {
   return Object.assign({ path, content: htmlContent }, fmContent.attributes);
 };
 
+// Generate HTML from the Markdown.
+const parseMarkdown = (path, markdownContent) => {
+  const htmlContent = marked(markdownContent);
+  return {path, content: htmlContent};
+};
+
 const router = new Router();
 
 router.get('/', async (req, res, next) => {
   try {
     const path = req.query.path;
-    console.log('path=' + path)
+    //console.log('path=' + path)
     if (!path || path === 'undefined') {
       res.status(400).send({error: `The 'path' query parameter cannot be empty.`});
       return;
     }
 
-    let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');
-    if (!await fs.exists(fileName)) {
-      fileName = join(CONTENT_DIR, path + '/index.jade');
-    }
-
-    if (!await fs.exists(fileName)) {
-      res.status(404).send({error: `The page '${path}' is not found.`});
+    if (path === '/README') {
+      let fileName = join(__dirname, './README.md');
+      if (!await fs.exists(fileName)) {
+        res.status(404).send({error: 'The README could not be found.'});
+      } else {
+        const source = await fs.readFile(fileName, { encoding: 'utf8' });
+        const content = parseMarkdown(path, source);
+        res.status(200).send(content);
+      }
     } else {
-      const source = await fs.readFile(fileName, { encoding: 'utf8' });
-      const content = parseJade(path, source);
-      res.status(200).send(content);
-    }
-  } catch (err) {
-    next(err);
-  }
-});
+      let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');
+      if (!await fs.exists(fileName)) {
+        fileName = join(CONTENT_DIR, path + '/index.jade');
+      }
 
-router.get('/README', async (req, res, next) => {
-  console.log('here')
-  try {
-    var p = new Promise(function(resolve, reject){
-      fs.readFile("../../README.md", "utf8", function(err, data) {
-        if (err) reject(err);
-        resolve(data);
-      });
-    }).then(function(val){
-      res.status(200).send(marked(val.toString()));
-    });
+      if (!await fs.exists(fileName)) {
+        res.status(404).send({error: `The page '${path}' is not found.`});
+      } else {
+        const source = await fs.readFile(fileName, { encoding: 'utf8' });
+        const content = parseJade(path, source);
+        res.status(200).send(content);
+      }
+    }
+
   } catch (err) {
     next(err);
   }

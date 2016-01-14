@@ -172,7 +172,7 @@ const appConfig = merge({}, config, {
 // -----------------------------------------------------------------------------
 
 const serverConfig = merge({}, config, {
-  entry: './src/server.js',
+  entry: ['./src/server.js'],
   output: {
     path: './build',
     filename: 'server.js',

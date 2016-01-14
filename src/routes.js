@@ -23,7 +23,6 @@ const router = new Router(on => {
   on('/register', async () => <RegisterPage />);
 
   on('*', async (state) => {
-    console.log("WOrld");
     const content = await http.get(`/api/content?path=${state.path}`);
     return content && <ContentPage {...content} />;
   });

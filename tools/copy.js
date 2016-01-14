@@ -22,6 +22,7 @@ export default task('copy', async () => {
     copy('src/public', 'build/public'),
     copy('src/content', 'build/content'),
     copy('package.json', 'build/package.json'),
+    copy('README.md', 'build/README.md')
   ]);
 
   replace({
