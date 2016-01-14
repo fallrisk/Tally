@@ -19,6 +19,40 @@ var examplePollData = [
   {dateCreated: Date.now(), pollName: 'Best Interpreted Programming Language', pollOptions: ['Python', 'Perl', 'Ruby'], pollResults: [0, 0, 0], user: 1}
 ];
 
+class PollChart extends Component {
+
+  componentDidMount() {
+    var ele = this.getDOMNode();
+    D3PollChart.create(ele, {
+      width: '100%',
+      height: '60px'
+    }, this.getChartState());
+  }
+
+  componentDidUpdate() {
+    var ele = this.getDOMNode();
+    D3PollChart.update(ele, this.getChartState());
+  }
+
+  getChartState() {
+    return {
+      data: this.props.data,
+      domain: this.props.domain
+    }
+  }
+
+  componentWillUnmount() {
+    var ele = this.getDOMNode();
+    D3PollChart.destroy(ele);
+  }
+
+  render() {
+    return (
+      <div className="LatestPolls-PollChart"></div>
+    )
+  }
+}
+
 class Poll extends Component {
   render() {
     const self = this;

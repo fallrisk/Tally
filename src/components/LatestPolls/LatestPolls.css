@@ -8,7 +8,7 @@
 }
 
 .LatestPolls-container {
-
+  margin: 0 10px;
 }
 
 .LatestPolls-container:after {

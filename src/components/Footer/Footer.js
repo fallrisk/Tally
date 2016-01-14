@@ -31,7 +31,7 @@ class Footer extends Component {
           <span className="Footer-spacer"> | </span>
           <a className="Navigation-link" href="/README">README</a>
           <span className="Footer-spacer">·</span>
-          <a className="Navigation-link" href="https://github.com/fallrisk/Tally/">GitHub</a>
+          <a className="Navigation-link" href="https://github.com/fallrisk/Tally/"><i className="fa fa-github-alt"></i>GitHub</a>
           <span className="Footer-spacer"> | </span>
           <a className="Footer-link" href="/not-found" onClick={Link.handleClick}>404 Page</a>
           <span className="Footer-spacer">·</span>

@@ -166,3 +166,7 @@ textarea {
     page-break-after: avoid;
   }
 }
+
+.fa {
+  margin-right: 4px;
+}
