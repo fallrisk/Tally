@@ -21,7 +21,7 @@ const router = new Router();
 router.get('/', async (req, res, next) => {
   try {
     const path = req.query.path;
-
+    console.log('path=' + path)
     if (!path || path === 'undefined') {
       res.status(400).send({error: `The 'path' query parameter cannot be empty.`});
       return;
@@ -39,6 +39,22 @@ router.get('/', async (req, res, next) => {
       const content = parseJade(path, source);
       res.status(200).send(content);
     }
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get('/README', async (req, res, next) => {
+  console.log('here')
+  try {
+    var p = new Promise(function(resolve, reject){
+      fs.readFile("../../README.md", "utf8", function(err, data) {
+        if (err) reject(err);
+        resolve(data);
+      });
+    }).then(function(val){
+      res.status(200).send(marked(val.toString()));
+    });
   } catch (err) {
     next(err);
   }

@@ -14,11 +14,9 @@ class Navigation extends Component {
   };
 
   render() {
+    // TODO When a user is logged in have it show "Profile * Logout".
     return (
       <div className={classNames(this.props.className, 'Navigation')} role="navigation">
-        <a className="Navigation-link" href="/README" onClick={Link.handleClick}>README</a>
-        <span className="Navigation-spacer"> | </span>
-        <a className="Navigation-link" href="http://www.github.com" onClick={Link.handleClick}>GitHub</a>
         <span className="Navigation-spacer"> | </span>
         <a className="Navigation-link" href="/login" onClick={Link.handleClick}>Log in</a>
         <span className="Navigation-spacer">or</span>

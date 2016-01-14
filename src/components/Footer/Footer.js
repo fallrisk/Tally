@@ -27,10 +27,14 @@ class Footer extends Component {
         <div className="Footer-container">
           <span className="Footer-text">© Justin Watson</span>
           <span className="Footer-spacer">·</span>
-          <a className="Footer-link" href="/" onClick={Link.handleClick}>Home</a>
-          <span className="Footer-spacer">·</span>
-          <a className="Footer-link" href="/not-found" onClick={Link.handleClick}>Not Found</a>
+          <a className="Footer-link" href="http://www.freecodecamp.com/fallrisk">@FreeCodeCamp</a>
           <span className="Footer-spacer"> | </span>
+          <a className="Navigation-link" href="/README">README</a>
+          <span className="Footer-spacer">·</span>
+          <a className="Navigation-link" href="http://www.github.com" onClick={Link.handleClick}>GitHub</a>
+          <span className="Footer-spacer"> | </span>
+          <a className="Footer-link" href="/not-found" onClick={Link.handleClick}>404 Page</a>
+          <span className="Footer-spacer">·</span>
           <span ref="viewport" className="Footer-viewport Footer-text Footer-text--muted">Viewport:</span>
         </div>
       </div>

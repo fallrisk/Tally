@@ -16,14 +16,14 @@ const router = new Router(on => {
     const component = await next();
     return component && <App context={state.context}>{component}</App>;
   });
-
-  on('/contact', async () => <ContactPage />);
+  // on('/contact', async () => <ContactPage />);
 
   on('/login', async () => <LoginPage />);
 
   on('/register', async () => <RegisterPage />);
 
   on('*', async (state) => {
+    console.log("WOrld");
     const content = await http.get(`/api/content?path=${state.path}`);
     return content && <ContentPage {...content} />;
   });
