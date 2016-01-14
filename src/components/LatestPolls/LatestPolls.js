@@ -5,6 +5,7 @@
 import React, { PropTypes, Component } from 'react';
 import withStyles from '../../decorators/withStyles';
 import styles from './LatestPolls.css';
+import PollStore from '../../stores/PollStore';
 
 var examplePollData = [
   // Template: {dateCreated: Date.now(), pollName:'', pollOptions: [], pollResults: [], user: }
@@ -18,12 +19,6 @@ var examplePollData = [
   {dateCreated: Date.now(), pollName: 'Best Interpreted Programming Language', pollOptions: ['Python', 'Perl', 'Ruby'], pollResults: [0, 0, 0], user: 1}
 ];
 
-class PollOption extends Component {
-  render() {
-
-  }
-}
-
 class Poll extends Component {
   render() {
     const self = this;
@@ -31,7 +26,7 @@ class Poll extends Component {
     var pollOptionNodes = this.props.pollOptions.map((option) => {
       i += 1
       return (
-        <div className="LatestPolls-poll-option">
+        <div key={i} className="LatestPolls-poll-option">
           <span>{option}</span>
           <span>({self.props.pollResults[i]})</span>
         </div>
@@ -48,18 +43,23 @@ class Poll extends Component {
 
 @withStyles(styles)
 class LatestPolls extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      latestPolls: PollStore.getLatest()
+    };
+  }
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
   };
 
-
   render() {
     const title = 'Tally';
     this.context.onSetTitle(title);
-    var pollNodes = examplePollData.map((poll) => {
+    var pollNodes = this.state.latestPolls.map((poll) => {
       return (
-        <Poll name={poll.pollName} pollOptions={poll.pollOptions} pollResults={poll.pollResults} />
+        <Poll key={poll.id} name={poll.pollName} pollOptions={poll.pollOptions} pollResults={poll.pollResults} />
       )
     });
     return (
