@@ -41,4 +41,10 @@
 
   --animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;
 
+  --color-2: #FE0DD4;
+  --color-1: #BD0CE6;
+  --color0: #8B00FD;
+  --color1: #480CE6;
+  --color2: #0E0DFE;
+
 }

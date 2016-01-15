@@ -4,7 +4,8 @@
  */
 
 .LatestPolls {
-
+  display: block;
+  margin-bottom: 10px;
 }
 
 .LatestPolls-container {
@@ -19,10 +20,35 @@
 
 .LatestPolls-pollContainer {
   width: 100%;
+  text-align: center;
 }
 
 .LatestPolls-poll {
-  width: 33%;
-  /*border: solid black 1px;*/
-  float: left;
+  width: 30%;
+  display: inline-block;
+  border-radius: 5px;
+  border: solid 1px darkgreen;
+  margin: 5px;
 }
+
+.LatestPolls-PollChart rect {
+  fill: #8B00FD;
+}
+
+.LatestPolls-PollChart svg {
+  margin-bottom: 5px;
+}
+
+.LatestPolls-poll-title {
+  text-align: center;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+

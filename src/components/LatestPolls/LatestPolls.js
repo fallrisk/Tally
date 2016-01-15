@@ -3,6 +3,7 @@
  */
 
 import React, { PropTypes, Component } from 'react';
+import ReactDOM from 'react-dom';
 import withStyles from '../../decorators/withStyles';
 import styles from './LatestPolls.css';
 import PollStore from '../../stores/PollStore';
@@ -22,27 +23,27 @@ var examplePollData = [
 class PollChart extends Component {
 
   componentDidMount() {
-    var ele = this.getDOMNode();
+    var ele = ReactDOM.findDOMNode(this);
     D3PollChart.create(ele, {
-      width: '100%',
-      height: '60px'
+      width: '95%',
+      height: '30'
     }, this.getChartState());
   }
 
   componentDidUpdate() {
-    var ele = this.getDOMNode();
+    var ele = ReactDOM.findDOMNode(this);
     D3PollChart.update(ele, this.getChartState());
   }
 
   getChartState() {
     return {
       data: this.props.data,
-      domain: this.props.domain
+      columnNames: this.props.pollOptions
     }
   }
 
   componentWillUnmount() {
-    var ele = this.getDOMNode();
+    var ele = ReactDOM.findDOMNode(this);
     D3PollChart.destroy(ele);
   }
 
@@ -55,21 +56,11 @@ class PollChart extends Component {
 
 class Poll extends Component {
   render() {
-    const self = this;
-    var i = -1;
-    var pollOptionNodes = this.props.pollOptions.map((option) => {
-      i += 1
-      return (
-        <div key={i} className="LatestPolls-poll-option">
-          <span>{option}</span>
-          <span>({self.props.pollResults[i]})</span>
-        </div>
-      )
-    });
+
     return (
       <div className="LatestPolls-poll">
-        {pollOptionNodes}
-        <h2>{this.props.name}</h2>
+        <h2 className="LatestPolls-poll-title">{this.props.name}</h2>
+        <PollChart data={this.props.pollResults} pollOptions={this.props.pollOptions} />
       </div>
     )
   }
