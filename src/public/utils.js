@@ -22,7 +22,7 @@ var D3PollChart = {
   update: function(ele, state) {
     var xScale = d3.scale.linear()
       .domain([0, d3.max(state.data)]) // Domain is the data space.
-      .range([0, $(ele).width()]); // Range is the display/draw space.
+      .range([0, $(ele).width() - 40]); // Range is the display/draw space.
 
     this._drawBars(ele, xScale, state.data, state.columnNames);
   },
@@ -37,7 +37,7 @@ var D3PollChart = {
     //console.log('Chart Data: ', data);
     var tip = d3.tip()
       .attr('class', 'd3-tip')
-      .offset([0, 10])
+      .direction('e')
       .html(function(d, i) {
         return '<span>' + d + '</span>';
       });
@@ -48,12 +48,22 @@ var D3PollChart = {
       .enter().append('g')
       .attr('transform', function(d, i) {
         return 'translate(0,' + i * 30 + ')';
-      })
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
+      });
 
     bar.append('rect')
       .attr('width', xScale)
-      .attr('height', 30 - 1);
+      .attr('height', 30 - 1)
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+
+    bar.append("text")
+      .attr("x", function (d) {
+        return 3
+      })
+      .attr("y", 30 / 2)
+      .attr("dy", ".35em")
+      .text(function (d, i) {
+        return columnNames[i]
+      })
   }
 };

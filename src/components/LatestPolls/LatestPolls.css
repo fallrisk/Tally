@@ -52,3 +52,14 @@
   border-radius: 2px;
 }
 
+.LatestPolls-PollChart text {
+  font-size:  16px;
+  font-family: "Open Sans Mono";
+  paint-order: stroke;
+  stroke: #000000;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  font-weight: 800;
+  fill: white;
+}
