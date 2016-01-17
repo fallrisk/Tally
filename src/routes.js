@@ -11,6 +11,7 @@ import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import LatestPolls from './components/LatestPolls';
+import PollInfoPage from './components/PollInfoPage';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
@@ -24,6 +25,11 @@ const router = new Router(on => {
   on('/login', async () => <LoginPage />);
 
   on('/register', async () => <RegisterPage />);
+
+  on('/poll/:id', async (state) => {
+    console.log('PollInfoPage: ' + state.params.id);
+    return <PollInfoPage pollId={state.params.id} />
+  });
 
   on('*', async (state) => {
     const content = await http.get(`/api/content?path=${state.path}`);

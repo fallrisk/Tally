@@ -12,9 +12,9 @@ var D3PollChart = {
     //console.log(props, state);
     //console.log('Chart height:', props.height, state.data.length)
     var svg = d3.select(ele).append('svg')
-      .attr('class', 'LatestPolls-pollBarGraph')
+      .attr('class', '.pollBarGraph')
       .attr('width', props.width)
-      .attr('height', props.height * state.data.length + 'px');
+      .attr('height', (props.height * state.data.length) + 'px');
 
     this.update(ele, state);
   },
@@ -24,14 +24,14 @@ var D3PollChart = {
       .domain([0, d3.max(state.data)]) // Domain is the data space.
       .range([0, $(ele).width() - 40]); // Range is the display/draw space.
 
-    this._drawBars(ele, xScale, state.data, state.columnNames);
+    this._drawBars(ele, xScale, state.data, state.columnNames, state.showText);
   },
 
   destroy: function(ele) {
     // Clean-up should go here.
   },
 
-  _drawBars: function(ele, xScale, data, columnNames) {
+  _drawBars: function(ele, xScale, data, columnNames, showText) {
     var chart = d3.select(ele).selectAll('svg');
 
     //console.log('Chart Data: ', data);
@@ -56,14 +56,16 @@ var D3PollChart = {
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
-    bar.append("text")
-      .attr("x", function (d) {
-        return 3
-      })
-      .attr("y", 30 / 2)
-      .attr("dy", ".35em")
-      .text(function (d, i) {
-        return columnNames[i]
-      })
+    if (showText) {
+      bar.append("text")
+        .attr("x", function (d) {
+          return 3
+        })
+        .attr("y", 30 / 2)
+        .attr("dy", ".35em")
+        .text(function (d, i) {
+          return columnNames[i]
+        })
+    }
   }
 };

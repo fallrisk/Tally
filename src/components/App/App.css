@@ -1,3 +1,8 @@
+/**
+ * References
+ *  * http://www.cssreset.com/demos/layouts/how-to-keep-footer-at-bottom-of-page-with-css/
+ */
+
 @import '../../../node_modules/normalize.css/normalize.css';
 
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -14,6 +19,11 @@ html {
   font-size: 1em; /* ~16px; */
   font-family: var(--font-family-base);
   line-height: 1.375; /* ~22px */
+  height: 100%;
+}
+
+body {
+  height:100%;
 }
 
 /*
@@ -169,4 +179,13 @@ textarea {
 
 .fa {
   margin-right: 4px;
+}
+
+#app {
+  position: relative;
+  min-height: 100%;
+}
+
+.App-Content {
+  padding-bottom: 100px; /* This is the height of the footer. */
 }

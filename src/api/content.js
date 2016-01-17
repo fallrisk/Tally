@@ -41,7 +41,10 @@ router.get('/', async (req, res, next) => {
       } else {
         const source = await fs.readFile(fileName, { encoding: 'utf8' });
         const content = parseMarkdown(path, source);
-        res.status(200).send(content);
+        // title: Tally
+        // component: ContentPage
+        console.log(content);
+        res.status(200).json(Object.assign(content, { title: 'README', component: 'ContentPage'}));
       }
     } else {
       let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');

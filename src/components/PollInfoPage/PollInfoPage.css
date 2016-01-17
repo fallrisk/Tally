@@ -1,0 +1,48 @@
+.PollInfoPage {
+  display: block;
+  width: 100%;
+}
+
+.PollInfoPage-PollName {
+
+}
+
+.PollInfoPage-PollOptions {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+  line-height: 1.3;
+  font-size: 16pt;
+  padding-right: 4px;
+  border-right: solid black 4px;
+}
+
+.PollInfoPage-PollOptions div {
+  padding-bottom: 4px;
+}
+
+.PollInfoPage-PollOptions span {
+  display: inline-block;
+  padding-top: 2px;
+}
+
+.PollInfoPage-PollOptions button {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.PollInfoPage-PollChart {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  marign-right: 4px;
+}
+
+.PollInfoPage-PollChart svg {
+  fill: #8B00FD;
+}
+
+.pollBarGraph {
+  margin: 0;
+  padding: 0;
+}

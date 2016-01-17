@@ -7,18 +7,7 @@ import ReactDOM from 'react-dom';
 import withStyles from '../../decorators/withStyles';
 import styles from './LatestPolls.css';
 import PollStore from '../../stores/PollStore';
-
-var examplePollData = [
-  // Template: {dateCreated: Date.now(), pollName:'', pollOptions: [], pollResults: [], user: }
-  {dateCreated: Date.now(), pollName: 'Best Compiled Programming Language', pollOptions: ['C', 'C++', 'Java'], pollResults: [15, 22, 44], user: 1},
-  {dateCreated: Date.now(), pollName: 'Best Interpreted Programming Language', pollOptions: ['Python', 'Perl', 'Ruby'], pollResults: [0, 0, 0], user: 1},
-  {dateCreated: Date.now(), pollName: 'Best Compiled Programming Language', pollOptions: ['C', 'C++', 'Java'], pollResults: [15, 22, 44], user: 1},
-  {dateCreated: Date.now(), pollName: 'Best Interpreted Programming Language', pollOptions: ['Python', 'Perl', 'Ruby'], pollResults: [0, 0, 0], user: 1},
-  {dateCreated: Date.now(), pollName: 'Best Compiled Programming Language', pollOptions: ['C', 'C++', 'Java'], pollResults: [15, 22, 44], user: 1},
-  {dateCreated: Date.now(), pollName: 'Best Interpreted Programming Language', pollOptions: ['Python', 'Perl', 'Ruby'], pollResults: [0, 0, 0], user: 1},
-  {dateCreated: Date.now(), pollName: 'Best Compiled Programming Language', pollOptions: ['C', 'C++', 'Java'], pollResults: [15, 22, 44], user: 1},
-  {dateCreated: Date.now(), pollName: 'Best Interpreted Programming Language', pollOptions: ['Python', 'Perl', 'Ruby'], pollResults: [0, 0, 0], user: 1}
-];
+import Link from '../Link';
 
 class PollChart extends Component {
 
@@ -38,7 +27,8 @@ class PollChart extends Component {
   getChartState() {
     return {
       data: this.props.data,
-      columnNames: this.props.pollOptions
+      columnNames: this.props.pollOptions,
+      showText: true
     }
   }
 
@@ -56,11 +46,11 @@ class PollChart extends Component {
 
 class Poll extends Component {
   render() {
-
     return (
       <div className="LatestPolls-poll">
         <h2 className="LatestPolls-poll-title">{this.props.name}</h2>
         <PollChart data={this.props.pollResults} pollOptions={this.props.pollOptions} />
+        <a href={'/poll/' + this.props.id} onClick={Link.handleClick}>Place Vote</a>
       </div>
     )
   }
@@ -84,7 +74,7 @@ class LatestPolls extends Component {
     this.context.onSetTitle(title);
     var pollNodes = this.state.latestPolls.map((poll) => {
       return (
-        <Poll key={poll.id} name={poll.pollName} pollOptions={poll.pollOptions} pollResults={poll.pollResults} />
+        <Poll key={poll.id} id={poll.id} name={poll.pollName} pollOptions={poll.pollOptions} pollResults={poll.pollResults} />
       )
     });
     return (
