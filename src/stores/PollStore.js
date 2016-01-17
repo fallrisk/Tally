@@ -12,64 +12,7 @@ function rand(top) {
   return Math.floor(Math.random() * top);
 }
 
-var _polls = [
-  {
-    id: 1,
-    dateCreated: Date.now(),
-    pollName: 'Best Compiled Programming Language',
-    pollOptions: ['C', 'C++', 'Java'],
-    pollResults: [15, 22, 44],
-    user: null
-  },
-  {
-    id: 2,
-    dateCreated: Date.now(),
-    pollName: 'Best Interpreted Programming Language',
-    pollOptions: ['Python', 'Perl', 'Ruby'],
-    pollResults: [0, 0, 0],
-    user: null
-  },
-  {
-    id: 3,
-    dateCreated: Date.now(),
-    pollName: 'Best Video Card',
-    pollOptions: ["GeForce", "ATI Radeon", "Intel"],
-    pollResults: [rand(100), rand(100), rand(100)],
-    user: null
-  },
-  {
-    id: 4,
-    dateCreated: Date.now(),
-    pollName: 'Best Past-time',
-    pollOptions: ["Reading", "Writing", "Playing Video Games", "Sports"],
-    pollResults: [rand(100), rand(100), rand(100), rand(100)],
-    user: null
-  },
-  {
-    id: 5, dateCreated: Date.now(), pollName: 'Favorite Sport',
-    pollOptions: [
-      "Football (Soccer)", "American Football", "Hockey", "Cricket",
-      "Tennis", "Squash", "Bocce", "Curling"
-    ],
-    pollResults: [rand(100), rand(100), rand(100), rand(100), rand(100), rand(100), rand(100)],
-    user: null
-  },
-  {
-    id: 6,
-    dateCreated: Date.now(),
-    pollName: 'Best Number',
-    pollOptions: ['2', '3.14', '69', '1'],
-    pollResults: [0, 0, 69, 0],
-    user: null
-  },
-  {
-    id: 7,
-    dateCreated: Date.now(),
-    pollName: 'Best Web Programming Site',
-    pollOptions: ['Free Code Camp!'],
-    pollResults: [100]
-  }
-];
+var _polls = [];
 
 //
 // Either the userId is set or the ip is set.
@@ -99,37 +42,53 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
     return null;
   },
   emitChange: () => {
-    this.emit(CHANGE_EVENT);
+    PollStore.emit(CHANGE_EVENT);
   },
   addChangeListener: (callback) => {
-    this.on(CHANGE_EVENT, callback);
+    PollStore.on(CHANGE_EVENT, callback);
   },
   removeChangeListener: (callback) => {
-    this.removeListener(CHANGE_EVENT, callback);
+    PollStore.removeListener(CHANGE_EVENT, callback);
   },
   hasVoted: (pollId, user, ip) => {
     return false;
   },
-  dispatcherIndex: dispatcher.register((payload) => {
-    console.log('Payload: ' + payload);
-    var action = payload.action;
-    var text;
-
-    switch (action.actionType) {
-      case PollConstants.POLL_CREATE:
-        text = action.text.trim();
-        if (text !== '') {
-          create(text);
-          PollStore.emitChange();
+  castVote: (pollId, voteChoice) => {
+    console.log(pollId);
+    var poll = PollStore.get(pollId);
+    console.log('castVote: ' + poll);
+    if (poll) {
+      for (var i = 0; i < poll.pollOptions.length; i++) {
+        if (poll.pollOptions[i] === voteChoice) {
+          console.log('casted vote! old ' + poll.pollResults[i]);
+          poll.pollResults[i] += 1;
+          console.log('new ' + poll.pollResults[i]);
         }
-        break;
-      case PollConstants.POLL_CAST_VOTE:
-        console.log('Attempting to cast vote.');
-        break;
+      }
     }
+  }
+});
 
-    return true; // No errors. Needed by promise in Dispatcher.
-  })
+PollStore.dispatchToken = dispatcher.register((action) => {
+
+  switch (action.type) {
+    case PollConstants.POLL_CREATE:
+      //text = action.text.trim();
+      //if (text !== '') {
+      //  create(text);
+      //  PollStore.emitChange();
+      //}
+      break;
+    case PollConstants.POLL_CAST_VOTE:
+      console.log('Attempting to cast vote.');
+      PollStore.castVote(action.pollId, action.voteChoice);
+      PollStore.emitChange();
+      break;
+    default:
+      break;
+  }
+
+  return true; // No errors. Needed by promise in Dispatcher.
 });
 
 module.exports = PollStore;

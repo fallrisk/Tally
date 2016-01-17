@@ -9,11 +9,12 @@ import styles from './PollInfoPage.css';
 import PollStore from '../../stores/PollStore';
 import dispatcher from '../../core/Dispatcher';
 import PollConstants from '../../constants/ActionTypes';
+import PollActionCreator from '../../actions/PollActions';
 
 class PollChart extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    //console.log(props);
   }
 
   componentDidMount() {
@@ -53,21 +54,36 @@ class PollChart extends Component {
 class PollInfoPage extends Component {
   constructor(props) {
     super(props);
-    //console.log('Poll ID: ' + this.props.pollId);
-    var poll = PollStore.get(this.props.pollId);
-    //console.log('Poll', poll);
-    this.state = { poll: poll };
+    this.state = {
+      poll: PollStore.get(this.props.pollId)
+    };
     this.vote = this.vote.bind(this);
+    this.getStateFromStores = this.getStateFromStores.bind(this);
+    this._onChange = this._onChange.bind(this);
+  }
+
+  getStateFromStores() {
+    console.log('getState: ' + this.props.pollId);
+    return {
+      poll: PollStore.get(this.props.pollId)
+    };
+  }
+
+  componentDidMount() {
+    PollStore.addChangeListener(this._onChange);
+  }
+
+  componentWillUnmount() {
+    PollStore.removeChangeListener(this._onChange);
+  }
+
+  _onChange() {
+    this.setState(this.getStateFromStores());
   }
 
   vote(option) {
     console.log('Voting for ' + option);
-    dispatcher.dispatch({
-      action: PollConstants.POLL_CAST_VOTE,
-      vote: option,
-      ip: 1,
-      user: null
-    });
+    PollActionCreator.castVote(option, this.state.poll.id, '127.0.0.1', null);
   }
 
   render() {
