@@ -15,5 +15,10 @@ Free Code Camp Basejump: Voting App.
 * User Story: As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
 
 ## References
+There are many references through out the code that can be found at the top of the source files.
+They generally have to do with solving one particular problem. The one's listed here are more
+important and fundamental to understanding the architecture.
 * https://github.com/facebook/flux/tree/master/examples/flux-chat
 * https://github.com/facebook/flux/tree/master/examples/flux-todomvc
+* This one is incredibly important for understanding how to get persisted data.
+  http://www.code-experience.com/async-requests-with-react-js-and-flux-revisited/

@@ -27,7 +27,6 @@ const router = new Router(on => {
   on('/register', async () => <RegisterPage />);
 
   on('/poll/:id', async (state) => {
-    //console.log('PollInfoPage: ' + state.params.id);
     return <PollInfoPage pollId={state.params.id} />
   });
 

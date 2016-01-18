@@ -6,10 +6,15 @@ import withContext from '../../decorators/withContext';
 import withStyles from '../../decorators/withStyles';
 import Header from '../Header';
 import Footer from '../Footer';
+import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
 
 @withContext
 @withStyles(styles)
 class App extends Component {
+  constructor(props) {
+    super(props);
+    PollWebAPIUtils.getAllPolls();
+  }
 
   static propTypes = {
     children: PropTypes.element.isRequired,

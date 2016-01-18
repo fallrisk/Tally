@@ -8,16 +8,12 @@ import EventEmitter from 'eventemitter3';
 
 const CHANGE_EVENT = 'change';
 
-function rand(top) {
-  return Math.floor(Math.random() * top);
-}
-
 var _polls = [];
 
 //
 // Either the userId is set or the ip is set.
 // {pollId:, userId:, ip:,}
-var _votes = []
+var _votes = [];
 
 function create() {
 
@@ -82,6 +78,12 @@ PollStore.dispatchToken = dispatcher.register((action) => {
     case PollConstants.POLL_CAST_VOTE:
       console.log('Attempting to cast vote.');
       PollStore.castVote(action.pollId, action.voteChoice);
+      PollStore.emitChange();
+      break;
+    case PollConstants.POLL_RECEIVE_ALL:
+      console.log('Updated poll data.');
+      console.log(action.pollData);
+      _polls = JSON.parse(action.pollData);
       PollStore.emitChange();
       break;
     default:

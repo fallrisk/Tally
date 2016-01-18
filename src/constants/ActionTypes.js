@@ -7,5 +7,6 @@ export default keyMirror({
   POLL_COMPLETE: null,
   POLL_DESTROY: null,
   POLL_DESTROY_COMPLETED: null,
-  POLL_CAST_VOTE: null
+  POLL_CAST_VOTE: null,
+  POLL_RECEIVE_ALL: null
 });

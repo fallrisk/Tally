@@ -63,6 +63,27 @@ class LatestPolls extends Component {
     this.state = {
       latestPolls: PollStore.getLatest()
     };
+    this.getStateFromStores = this.getStateFromStores.bind(this);
+    this._onChange = this._onChange.bind(this);
+  }
+
+  getStateFromStores() {
+    return {
+      latestPolls: PollStore.getLatest()
+    };
+  }
+
+  componentDidMount() {
+    PollStore.addChangeListener(this._onChange);
+  }
+
+  componentWillUnmount() {
+    PollStore.removeChangeListener(this._onChange);
+  }
+
+  _onChange() {
+    this.setState(this.getStateFromStores());
+    console.log('latestPolls: ' + this.state.latestPolls);
   }
 
   static contextTypes = {

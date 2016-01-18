@@ -1,15 +1,19 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-# TEAM
+/* TEAM */
 
     <name> -- <role> -- <twitter>
+    Justin Watson -- Programmer -- @fallrisk
 
-# THANKS
+/* THANKS */
 
     <name>
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, JavaScript
-    React, Flux, SuperAgent
+/* SITE */
+Last update: 2016/01/17
+Standards: CSS3, HTML5, JavaScript
+Components: React, Flux, SuperAgent
+Software: WebStorm 11.0.1
