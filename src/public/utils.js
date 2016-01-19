@@ -15,7 +15,7 @@ var D3PollChart = {
       .attr('class', '.pollBarGraph')
       .attr('width', props.width)
       .attr('height', (props.height * state.data.length) + 'px');
-      console.log('computed height: ' + (props.height * state.data.length));
+      //console.log('computed height: ' + (props.height * state.data.length));
     this.update(ele, state, props.height);
   },
 
@@ -34,7 +34,7 @@ var D3PollChart = {
   _drawBars: function(ele, xScale, data, columnNames, showText, barHeight) {
     var chart = d3.select(ele).selectAll('svg');
 
-    console.log('Chart Data: ', data);
+    //console.log('Chart Data: ', data);
     var tip = d3.tip()
       .attr('class', 'd3-tip')
       .direction('e')

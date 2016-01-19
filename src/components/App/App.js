@@ -8,12 +8,13 @@ import Header from '../Header';
 import Footer from '../Footer';
 import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
 
+PollWebAPIUtils.getAllPolls();
+
 @withContext
 @withStyles(styles)
 class App extends Component {
   constructor(props) {
     super(props);
-    PollWebAPIUtils.getAllPolls();
   }
 
   static propTypes = {

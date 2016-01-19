@@ -69,41 +69,71 @@ var _polls = [
   }
 ];
 
+// {ip: '', userId: '', pollId: ''}
+var _votes = [];
+
+// TODO JKW: This search algorithm is the trivial, garbage solution. This should be done with a much better algorithm.
+function hasTheUserVoted(ip, userId, pollId) {
+  if (_votes.length < 1) {
+    return false;
+  }
+  for (var i = 0; i < _votes.length; i++) {
+    var vote = _votes[i];
+    if (vote.pollId === pollId) {
+      if (vote.ip === ip || vote.userId === userId) {
+        return true;
+      }
+    }
+  }
+  // If they weren't found by either then return false.
+  return false;
+}
+
 function getPoll(id) {
   id = parseInt(id);
   for (var i = 0; i < _polls.length; i++) {
     if (_polls[i].id === id) {
-      //console.log('Found it!');
       return _polls[i];
     }
   }
   return null;
 }
 
+function castVote(pollId, voteChoice) {
+  var poll = getPoll(pollId);
+  if (poll) {
+    for (var i = 0; i < poll.pollOptions.length; i++) {
+      if (poll.pollOptions[i] === voteChoice) {
+        poll.pollResults[i] += 1;
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 router.get('/', async (req, res) => {
-  res.status(200).json(_polls);
+  res.status(200).json({polls: _polls, votes: _votes, userIp: req.ip});
 });
 
 router.get('/vote', async (req, res) => {
-  console.log(req.query);
   if (req.query.pollId && req.query.voteChoice) {
-    console.log('here at /vote');
-    var poll = getPoll(req.query.pollId);
-    if (poll) {
-      console.log('got vote');
-      for (var i = 0; i < poll.pollOptions.length; i++) {
-        if (poll.pollOptions[i] === req.query.voteChoice) {
-          console.log('casted vote! old ' + poll.pollResults[i]);
-          poll.pollResults[i] += 1;
-          console.log('new ' + poll.pollResults[i]);
-        }
+    var userId = (req.user !== undefined) ? req.user.id : null;
+    if (hasTheUserVoted(req.ip, userId, req.query.pollId)) {
+      res.status(200).json({error: 'The user has already voted.', errorCode: 1});
+    } else {
+      if (castVote(req.query.pollId, req.query.voteChoice)) {
+        // Add the vote to the list of votes.
+        var vote = {ip: req.ip, userId: userId, pollId: req.query.pollId};
+        _votes.push(vote);
+        res.status(200).json({pollId: req.query.pollId, voteChoice: req.query.voteChoice});
+      } else {
+        res.status(200).json({error: 'Failed to vote.', errorCode: 3});
       }
     }
-    res.status(200).send({pollId: req.query.pollId, voteChoice: req.query.voteChoice});
   } else {
-    res.status(200).json({error: 'No query vars sent.'});
+    res.status(200).json({error: 'Invalid request', errorCode: 2});
   }
-  res.status(200).send('I am confused.');
 });
 
 router.get('/:id', async () => {

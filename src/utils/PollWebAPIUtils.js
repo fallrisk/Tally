@@ -7,26 +7,39 @@ const API_URL = 'http://localhost:3000/api/polls';
 
 export default {
   getAllPolls: () => {
+    console.log('Requested All Polls.');
     request.get(API_URL)
       .timeout(2000)
       .end( (err, res) => {
         if (err) {
           console.log('Error occurred getting Polls.', err);
         } else {
-          PollActions.receiveAll(res.text);
+          var resData = JSON.parse(res.text);
+          if (resData.hasOwnProperty('error')) {
+
+          } else {
+            PollActions.receiveAll(resData);
+          }
         }
       });
   },
   castVote: (pollId, voteChoice) => {
-    request.get('http://localhost:3000/api/polls/vote')
+    request.get(API_URL + '/vote')
       .timeout(2000)
       .query({pollId: pollId, voteChoice: voteChoice})
       .end( (err, res) => {
         if (err) {
           console.log('Error occurred casting vote.', err);
         } else {
-          console.log(res.text);
-          PollActions.castVote(JSON.parse(res.text));
+          var resData = JSON.parse(res.text);
+          if (resData.hasOwnProperty('error')) {
+            // If the error code is 1 then the user has already voted.
+            if (resData.errorCode === 1) {
+              // We do nothing because the store would have that information.
+            }
+          } else {
+            PollActions.castVote(resData);
+          }
         }
       });
   }

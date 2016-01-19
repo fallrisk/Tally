@@ -15,8 +15,6 @@ import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
 class PollChart extends Component {
   constructor(props) {
     super(props);
-    //console.log(props);
-    console.log('In constructor.');
     this.componentDidUpdate = this.componentDidUpdate.bind(this);
     this.getChartState = this.getChartState.bind(this);
   }
@@ -36,7 +34,7 @@ class PollChart extends Component {
   }
 
   getChartState() {
-    console.log(this.props);
+    //console.log(this.props);
     return {
       data: this.props.data,
       columnNames: this.props.pollOptions,
@@ -84,19 +82,22 @@ class PollInfoPage extends Component {
   }
 
   _onChange() {
-    console.log('PollInfoPage->Getting state from stores.')
     this.setState(this.getStateFromStores());
-    console.log(this.state);
   }
 
   vote(option) {
-    console.log('Voting for ' + option);
     PollWebAPIUtils.castVote(this.state.poll.id, option);
-    //PollActionCreator.castVote(this.state.poll.id, option);
   }
 
   render() {
+    var hasVoted = this.state.poll.hasVoted;
+    console.log('Making poll options.' + hasVoted);
     var pollOptionNodes = this.state.poll.pollOptions.map((option) => {
+      if (hasVoted) {
+        return (
+          <div><span>{option}</span></div>
+        )
+      }
       return (
         <div><button onClick={this.vote.bind(this, option)}>Vote for</button><span>{option}</span></div>
       );

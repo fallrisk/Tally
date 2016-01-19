@@ -15,8 +15,24 @@ var _polls = [];
 // {pollId:, userId:, ip:,}
 var _votes = [];
 
-function create() {
+var _userIp = null;
 
+// TODO JKW: This search algorithm is the trivial, garbage solution. This should be done with a much better algorithm.
+function hasTheUserVoted(ip, userId, pollId) {
+  if (_votes.length < 1) {
+    return false;
+  }
+  // Check to see if the userId or Ip for this poll is already been done.
+  for (var i = 0; i < _votes.length; i++) {
+    var vote = _votes[i];
+    if (vote.pollId === pollId) {
+      if (vote.ip === ip || vote.userId === userId) {
+        return true;
+      }
+    }
+  }
+  // If they weren't found by either then return false.
+  return false;
 }
 
 var PollStore = Object.assign({}, EventEmitter.prototype, {
@@ -31,8 +47,8 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
     id = parseInt(id);
     for (var i = 0; i < _polls.length; i++) {
       if (_polls[i].id === id) {
-        //console.log('Found it!');
-        return _polls[i];
+        console.log(_votes);
+        return Object.assign(_polls[i], {hasVoted: hasTheUserVoted(_userIp, null, _polls[i].id)});
       }
     }
     return null;
@@ -52,13 +68,13 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
   castVote: (pollId, voteChoice) => {
     console.log(pollId);
     var poll = PollStore.get(pollId);
-    console.log('castVote: ' + poll);
     if (poll) {
       for (var i = 0; i < poll.pollOptions.length; i++) {
         if (poll.pollOptions[i] === voteChoice) {
-          console.log('casted vote! old ' + poll.pollResults[i]);
           poll.pollResults[i] += 1;
-          console.log('Store: new ' + poll.pollResults[i]);
+          // Add the vote to the list of votes.
+          var vote = {ip: _userIp, userId: null, pollId: parseInt(pollId)};
+          _votes.push(vote);
         }
       }
     }
@@ -69,23 +85,20 @@ PollStore.dispatchToken = dispatcher.register((action) => {
 
   switch (action.type) {
     case PollConstants.POLL_CREATE:
-      //text = action.text.trim();
-      //if (text !== '') {
-      //  create(text);
-      //  PollStore.emitChange();
-      //}
+      console.log('POLL_CREATE');
       break;
 
     case PollConstants.POLL_CAST_VOTE:
-      console.log('Attempting to cast vote.');
+      //console.log('POLL_CAST_VOTE');
       PollStore.castVote(action.pollId, action.voteChoice);
       PollStore.emitChange();
       break;
 
     case PollConstants.POLL_RECEIVE_ALL:
-      console.log('Updated poll data.');
-      console.log(action.pollData);
-      _polls = JSON.parse(action.pollData);
+      //console.log('POLL_RECEIVE_ALL');
+      _polls = action.pollData;
+      _votes = action.voteData;
+      _userIp = action.userIp;
       PollStore.emitChange();
       break;
     default:

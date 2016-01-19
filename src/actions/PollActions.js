@@ -17,7 +17,11 @@ export default {
   receiveAll: (resData) => {
     dispatcher.dispatch({
       type: PollConstants.POLL_RECEIVE_ALL,
-      pollData: resData
+      pollData: resData.polls,
+      voteData: resData.votes,
+      // The user can modify their local store and spoof this, but when the request is made they can't spoof it
+      // the client will change what is displayed based on this, so it only hurts them if they try to spoof it.
+      userIp: resData.userIp
     });
   }
 };
