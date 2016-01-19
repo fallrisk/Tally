@@ -15,6 +15,19 @@ export default {
         } else {
           PollActions.receiveAll(res.text);
         }
-    });
+      });
+  },
+  castVote: (pollId, voteChoice) => {
+    request.get('http://localhost:3000/api/polls/vote')
+      .timeout(2000)
+      .query({pollId: pollId, voteChoice: voteChoice})
+      .end( (err, res) => {
+        if (err) {
+          console.log('Error occurred casting vote.', err);
+        } else {
+          console.log(res.text);
+          PollActions.castVote(JSON.parse(res.text));
+        }
+      });
   }
 };

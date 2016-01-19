@@ -27,12 +27,12 @@
   width: 30%;
   display: inline-block;
   border-radius: 5px;
-  border: solid 1px darkgreen;
+  border: solid 1px #2E2047;
   margin: 5px;
 }
 
 .LatestPolls-PollChart rect {
-  fill: #8B00FD;
+  fill: #5D6D87;
 }
 
 .LatestPolls-PollChart svg {
@@ -61,5 +61,5 @@
   stroke-linecap: butt;
   stroke-linejoin: miter;
   font-weight: 800;
-  fill: white;
+  fill: #DADEDE;
 }

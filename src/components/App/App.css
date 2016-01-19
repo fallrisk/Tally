@@ -20,6 +20,7 @@ html {
   font-family: var(--font-family-base);
   line-height: 1.375; /* ~22px */
   height: 100%;
+  background-color: #DADEDE;
 }
 
 body {
@@ -184,6 +185,10 @@ textarea {
 #app {
   position: relative;
   min-height: 100%;
+}
+
+a {
+  color: #2E2047;
 }
 
 .App-Content {

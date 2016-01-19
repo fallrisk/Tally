@@ -15,26 +15,26 @@ var D3PollChart = {
       .attr('class', '.pollBarGraph')
       .attr('width', props.width)
       .attr('height', (props.height * state.data.length) + 'px');
-
-    this.update(ele, state);
+      console.log('computed height: ' + (props.height * state.data.length));
+    this.update(ele, state, props.height);
   },
 
-  update: function(ele, state) {
+  update: function(ele, state, barHeight) {
     var xScale = d3.scale.linear()
       .domain([0, d3.max(state.data)]) // Domain is the data space.
       .range([0, $(ele).width() - 40]); // Range is the display/draw space.
 
-    this._drawBars(ele, xScale, state.data, state.columnNames, state.showText);
+    this._drawBars(ele, xScale, state.data, state.columnNames, state.showText, barHeight);
   },
 
   destroy: function(ele) {
     // Clean-up should go here.
   },
 
-  _drawBars: function(ele, xScale, data, columnNames, showText) {
+  _drawBars: function(ele, xScale, data, columnNames, showText, barHeight) {
     var chart = d3.select(ele).selectAll('svg');
 
-    //console.log('Chart Data: ', data);
+    console.log('Chart Data: ', data);
     var tip = d3.tip()
       .attr('class', 'd3-tip')
       .direction('e')
@@ -44,28 +44,33 @@ var D3PollChart = {
 
     chart.call(tip);
 
-    var bar = chart.selectAll('g').data(data)
-      .enter().append('g')
+    var bar = chart.selectAll('g').data(data);
+
+
+    bar.enter().append('g')
       .attr('transform', function(d, i) {
-        return 'translate(0,' + i * 30 + ')';
+        return 'translate(0,' + i * barHeight + ')';
       });
+
 
     bar.append('rect')
       .attr('width', xScale)
-      .attr('height', 30 - 1)
+      .attr('height', barHeight - 1)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 
     if (showText) {
       bar.append("text")
         .attr("x", function (d) {
-          return 3
+          return 3;
         })
-        .attr("y", 30 / 2)
+        .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .text(function (d, i) {
-          return columnNames[i]
-        })
+          return columnNames[i];
+        });
     }
+
+    bar.exit().remove();
   }
 };

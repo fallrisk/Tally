@@ -10,27 +10,33 @@ import PollStore from '../../stores/PollStore';
 import dispatcher from '../../core/Dispatcher';
 import PollConstants from '../../constants/ActionTypes';
 import PollActionCreator from '../../actions/PollActions';
+import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
 
 class PollChart extends Component {
   constructor(props) {
     super(props);
     //console.log(props);
+    console.log('In constructor.');
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
+    this.getChartState = this.getChartState.bind(this);
   }
 
   componentDidMount() {
     var ele = ReactDOM.findDOMNode(this);
     D3PollChart.create(ele, {
       width: '95%',
-      height: '20'
+      height: '36'
     }, this.getChartState());
   }
 
   componentDidUpdate() {
+    console.log('PollChart Updated!');
     var ele = ReactDOM.findDOMNode(this);
-    D3PollChart.update(ele, this.getChartState());
+    D3PollChart.update(ele, this.getChartState(), 36);
   }
 
   getChartState() {
+    console.log(this.props);
     return {
       data: this.props.data,
       columnNames: this.props.pollOptions,
@@ -78,12 +84,15 @@ class PollInfoPage extends Component {
   }
 
   _onChange() {
+    console.log('PollInfoPage->Getting state from stores.')
     this.setState(this.getStateFromStores());
+    console.log(this.state);
   }
 
   vote(option) {
     console.log('Voting for ' + option);
-    PollActionCreator.castVote(option, this.state.poll.id, '127.0.0.1', null);
+    PollWebAPIUtils.castVote(this.state.poll.id, option);
+    //PollActionCreator.castVote(this.state.poll.id, option);
   }
 
   render() {

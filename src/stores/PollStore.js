@@ -58,7 +58,7 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
         if (poll.pollOptions[i] === voteChoice) {
           console.log('casted vote! old ' + poll.pollResults[i]);
           poll.pollResults[i] += 1;
-          console.log('new ' + poll.pollResults[i]);
+          console.log('Store: new ' + poll.pollResults[i]);
         }
       }
     }
@@ -75,11 +75,13 @@ PollStore.dispatchToken = dispatcher.register((action) => {
       //  PollStore.emitChange();
       //}
       break;
+
     case PollConstants.POLL_CAST_VOTE:
       console.log('Attempting to cast vote.');
       PollStore.castVote(action.pollId, action.voteChoice);
       PollStore.emitChange();
       break;
+
     case PollConstants.POLL_RECEIVE_ALL:
       console.log('Updated poll data.');
       console.log(action.pollData);

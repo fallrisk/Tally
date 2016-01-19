@@ -48,7 +48,7 @@ var _polls = [
       "Football (Soccer)", "American Football", "Hockey", "Cricket",
       "Tennis", "Squash", "Bocce", "Curling"
     ],
-    pollResults: [20, 30, 40, 50, 60, 70, 80],
+    pollResults: [rand(100), 30, 40, 50, 60, 70, 80, 90],
     user: null
   },
   {
@@ -69,9 +69,42 @@ var _polls = [
   }
 ];
 
+function getPoll(id) {
+  id = parseInt(id);
+  for (var i = 0; i < _polls.length; i++) {
+    if (_polls[i].id === id) {
+      //console.log('Found it!');
+      return _polls[i];
+    }
+  }
+  return null;
+}
+
 router.get('/', async (req, res) => {
   res.status(200).json(_polls);
-})
+});
+
+router.get('/vote', async (req, res) => {
+  console.log(req.query);
+  if (req.query.pollId && req.query.voteChoice) {
+    console.log('here at /vote');
+    var poll = getPoll(req.query.pollId);
+    if (poll) {
+      console.log('got vote');
+      for (var i = 0; i < poll.pollOptions.length; i++) {
+        if (poll.pollOptions[i] === req.query.voteChoice) {
+          console.log('casted vote! old ' + poll.pollResults[i]);
+          poll.pollResults[i] += 1;
+          console.log('new ' + poll.pollResults[i]);
+        }
+      }
+    }
+    res.status(200).send({pollId: req.query.pollId, voteChoice: req.query.voteChoice});
+  } else {
+    res.status(200).json({error: 'No query vars sent.'});
+  }
+  res.status(200).send('I am confused.');
+});
 
 router.get('/:id', async () => {
   res.status(200).json({ error: 'Not yet implemented.' });
