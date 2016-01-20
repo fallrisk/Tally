@@ -32,7 +32,7 @@ var D3PollChart = {
   },
 
   _drawBars: function(ele, xScale, data, columnNames, showText, barHeight) {
-    var chart = d3.select(ele).selectAll('svg');
+    var svg = d3.select(ele).selectAll('svg');
 
     //console.log('Chart Data: ', data);
     //var tip = d3.tip()
@@ -44,23 +44,27 @@ var D3PollChart = {
 
     //chart.call(tip);
 
-    var bar = chart.selectAll('g').data(data);
-
-
-    bar.enter().append('g')
+    var g = svg.selectAll('g').data(data);
+    g.select('rect')
+      .attr('width', xScale);
+    g.select('text')
+      .text(function (d, i) {
+        return date[i];
+      })
       .attr('transform', function(d, i) {
         return 'translate(0,' + i * barHeight + ')';
       });
 
-
-    bar.append('rect')
+    var ng = g.enter().append('g');
+    ng.append('rect')
       .attr('width', xScale)
-      .attr('height', barHeight - 1);
-      //.on('mouseover', tip.show)
-      //.on('mouseout', tip.hide);
+      .attr('height', barHeight - 1)
+      .attr('transform', function(d, i) {
+        return 'translate(0,' + i * barHeight + ')';
+      });
 
     if (showText) {
-      bar.append("text")
+      ng.append("text")
         .attr("x", function (d) {
           return 3;
         })
@@ -68,10 +72,11 @@ var D3PollChart = {
         .attr("dy", ".35em")
         .text(function (d, i) {
           return columnNames[i];
-        });
+        })
+        .attr('transform', function(d, i) {
+          return 'translate(0,' + i * barHeight + ')';
+        });;
     }
-
-    bar.exit().remove();
   }
 };
 

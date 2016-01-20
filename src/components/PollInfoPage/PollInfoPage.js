@@ -111,13 +111,11 @@ class PollInfoPage extends Component {
       return (
         <div className="PollInfoPage">
           <div className="PollInfoPage-container">
-            <div className="PollInfoPage-container">
-              <h1 className="PollInfoPage-PollName">{this.state.poll.pollName}</h1>
-              <div className="PollInfoPage-PollOptions">
-                {pollOptionNodes}
-              </div>
-              <PollChart data={this.state.poll.pollResults} pollOptions={this.state.poll.pollOptions} />
+            <h1 className="PollInfoPage-PollName">{this.state.poll.pollName}</h1>
+            <div className="PollInfoPage-PollOptions">
+              {pollOptionNodes}
             </div>
+            <PollChart data={this.state.poll.pollResults} pollOptions={this.state.poll.pollOptions} />
           </div>
         </div>
       )

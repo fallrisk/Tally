@@ -1,5 +1,5 @@
 # Tally
-Free Code Camp Basejump: Voting App.
+Free Code Camp Challenge: Build a Voting App.
 
 ## User Stories (Requirements)
 ### As an Authenticated User
