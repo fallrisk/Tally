@@ -1,5 +1,15 @@
+:root {
+  --btn-dark-color: #2E2047;
+  --btn-reg-color: #834E70;
+  --btn-text-color: #DADEDE;
+}
+
 .PollInfoPage {
-  width: 100%;
+}
+
+.PollInfoPage-container {
+  margin: 0 2%;
+  margin-bottom: 10px;
 }
 
 .PollInfoPage-PollName {
@@ -14,7 +24,7 @@
   font-size: 16pt;
   padding-right: 4px;
   vertical-align: top;
-  border-right: solid black 4px;
+  /*border-right: solid black 4px;*/
 }
 
 .PollInfoPage-PollOptions div {
@@ -23,12 +33,6 @@
 
 .PollInfoPage-PollOptions span {
   padding-top: 2px;
-}
-
-:root {
-  --btn-dark-color: #2E2047;
-  --btn-reg-color: #834E70;
-  --btn-text-color: #DADEDE;
 }
 
 .PollInfoPage-PollOptions button {
@@ -72,13 +76,22 @@
   display: inline-block;
   width: 40%;
   vertical-align: top;
+  border-left: solid black 4px;
 }
 
 .PollInfoPage-PollChart svg {
   fill: #5D6D87;
+
 }
 
-.pollBarGraph {
-  margin: 0;
-  padding: 0;
+.PollInfoPage-PollChart text {
+  font-size:  16px;
+  font-family: "Open Sans Mono";
+  paint-order: stroke;
+  stroke: #000000;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  font-weight: 800;
+  fill: #DADEDE;
 }

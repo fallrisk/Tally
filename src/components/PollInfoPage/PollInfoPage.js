@@ -11,6 +11,7 @@ import dispatcher from '../../core/Dispatcher';
 import PollConstants from '../../constants/ActionTypes';
 import PollActionCreator from '../../actions/PollActions';
 import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
+import Link from '../Link';
 
 class PollChart extends Component {
   constructor(props) {
@@ -21,16 +22,18 @@ class PollChart extends Component {
 
   componentDidMount() {
     var ele = ReactDOM.findDOMNode(this);
-    D3PollChart.create(ele, {
+    D3LargeChart.create(ele, this.getChartState(), {
       width: '95%',
-      height: '36'
-    }, this.getChartState());
+      barHeight: '30', // in pixels
+      paddingBetweenBars: 2, // in pixels
+      showDataValue: true
+    });
   }
 
   componentDidUpdate() {
     console.log('PollChart Updated!');
     var ele = ReactDOM.findDOMNode(this);
-    D3PollChart.update(ele, this.getChartState(), 36);
+    D3LargeChart.update(ele, this.getChartState(), 36);
   }
 
   getChartState() {
@@ -44,7 +47,7 @@ class PollChart extends Component {
 
   componentWillUnmount() {
     var ele = ReactDOM.findDOMNode(this);
-    D3PollChart.destroy(ele);
+    D3LargeChart.destroy(ele);
   }
 
   render() {
@@ -90,7 +93,7 @@ class PollInfoPage extends Component {
   }
 
   render() {
-    var hasVoted = this.state.poll.hasVoted;
+    var hasVoted = (this.state.poll.hasVoted) ? this.state.poll.hasVoted : false;
     console.log('Making poll options.' + hasVoted);
     var pollOptionNodes = this.state.poll.pollOptions.map((option) => {
       if (hasVoted) {
@@ -103,14 +106,19 @@ class PollInfoPage extends Component {
       );
     });
 
+
     if (this.state.poll) {
       return (
         <div className="PollInfoPage">
-          <h1 className="PollInfoPage-PollName">{this.state.poll.pollName}</h1>
-          <div className="PollInfoPage-PollOptions">
-            {pollOptionNodes}
+          <div className="PollInfoPage-container">
+            <div className="PollInfoPage-container">
+              <h1 className="PollInfoPage-PollName">{this.state.poll.pollName}</h1>
+              <div className="PollInfoPage-PollOptions">
+                {pollOptionNodes}
+              </div>
+              <PollChart data={this.state.poll.pollResults} pollOptions={this.state.poll.pollOptions} />
+            </div>
           </div>
-          <PollChart data={this.state.poll.pollResults} pollOptions={this.state.poll.pollOptions} />
         </div>
       )
     } else {

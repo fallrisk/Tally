@@ -102,7 +102,7 @@ class LatestPolls extends Component {
       <div className="LatestPolls">
         <div className="LatestPolls-container">
           <h1>Latest Polls</h1>
-          <div className="LatestPolls-pollContainer">
+          <div className="LatestPolls-polls-container">
             {pollNodes}
           </div>
         </div>

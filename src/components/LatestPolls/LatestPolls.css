@@ -4,12 +4,11 @@
  */
 
 .LatestPolls {
-  display: block;
-  margin-bottom: 10px;
+
 }
 
 .LatestPolls-container {
-  margin: 0 10px;
+  margin: 0 2%;
 }
 
 .LatestPolls-container:after {
@@ -18,9 +17,10 @@
   clear: both;
 }
 
-.LatestPolls-pollContainer {
+.LatestPolls-polls-container {
   width: 100%;
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .LatestPolls-poll {
@@ -36,7 +36,7 @@
 }
 
 .LatestPolls-PollChart svg {
-  margin-bottom: 5px;
+  /*margin-bottom: 5px;*/
 }
 
 .LatestPolls-poll-title {

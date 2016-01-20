@@ -35,14 +35,14 @@ var D3PollChart = {
     var chart = d3.select(ele).selectAll('svg');
 
     //console.log('Chart Data: ', data);
-    var tip = d3.tip()
-      .attr('class', 'd3-tip')
-      .direction('e')
-      .html(function(d, i) {
-        return '<span>' + d + '</span>';
-      });
+    //var tip = d3.tip()
+    //  .attr('class', 'd3-tip')
+    //  .direction('e')
+    //  .html(function(d, i) {
+    //    return '<span>' + d + '</span>';
+    //  });
 
-    chart.call(tip);
+    //chart.call(tip);
 
     var bar = chart.selectAll('g').data(data);
 
@@ -55,9 +55,9 @@ var D3PollChart = {
 
     bar.append('rect')
       .attr('width', xScale)
-      .attr('height', barHeight - 1)
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
+      .attr('height', barHeight - 1);
+      //.on('mouseover', tip.show)
+      //.on('mouseout', tip.hide);
 
     if (showText) {
       bar.append("text")
@@ -72,5 +72,70 @@ var D3PollChart = {
     }
 
     bar.exit().remove();
+  }
+};
+
+
+var D3LargeChart = {
+
+  // In the create method we make the svg.
+  create: function (ele, state, props) {
+    var svg = d3.select(ele).append('svg'); // Create an svg in the parent element.
+    svg.attr('class', props.class)
+      .attr('width', props.width)
+      .attr('height', (props.barHeight * state.data.length)
+        + (props.paddingBetweenBars * (state.data.length - 1)) + 'px');
+    this.update(ele, state, props);
+  },
+
+  update: function (ele, state, props) {
+    var xScale = d3.scale.linear()
+      .domain([0, d3.max(state.data)]) // Domain is the data space.
+      .range([0, $(ele).width() - 40]); // Range is the display/draw space.
+    this._draw(ele, state, props, xScale);
+  },
+
+  destroy: function (ele) {
+    d3.select(ele).selectAll('svg').remove();
+  },
+
+  _draw: function (ele, state, props, xScale) {
+    var svg = d3.select(ele).selectAll('svg');
+
+    // This shit is annoying.
+    // http://d3js.org/#enter-exit
+    // http://bost.ocks.org/mike/join/
+    // http://knowledgestockpile.blogspot.com/2012/01/understanding-selectall-data-enter.html
+
+    // Update...
+    var g = svg.selectAll('g').data(state.data);
+    g.select('rect')
+      .attr('width', xScale);
+    g.select('text')
+      .text(function (d, i) {
+        return state.data[i];
+      });
+
+    // Enter...
+    var newg = g.enter().append('g');
+    newg.append('rect')
+      .attr('width', xScale)
+      .attr('height', props.barHeight)
+      // Transform moves each bar down based on its index.
+      .attr('transform', function (d, i) {
+        return 'translate(0,' + ((i * props.barHeight) + (i * props.paddingBetweenBars)) + ')';
+      })
+    newg.append('text')
+      .attr('x', function (d) {
+        return 3;
+      })
+      .attr('y', props.barHeight / 2)
+      .attr('dy', '.35em')
+      .text(function (d, i) {
+        return state.data[i];
+      })
+      .attr('transform', function (d, i) {
+        return 'translate(0,' + ((i * props.barHeight) + (i * props.paddingBetweenBars)) + ')';
+      });
   }
 };
