@@ -7,17 +7,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/server';
 import Router from './routes';
 import Html from './components/Html';
+import bodyParser from 'body-parser';
 
 const server = global.server = express();
 
 server.set('port', (process.env.PORT || 5000));
 server.use(express.static(path.join(__dirname, 'public')));
+server.use(bodyParser.urlencoded({extended: false}));
+server.use(bodyParser.json());
 
 //
 // Register API middleware
 // -----------------------------------------------------------------------------
 server.use('/api/content', require('./api/content'));
 server.use('/api/polls', require('./api/polls'));
+server.use('/api/users', require('./api/users'));
 
 //
 // Register server-side rendering middleware

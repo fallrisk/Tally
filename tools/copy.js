@@ -22,7 +22,8 @@ export default task('copy', async () => {
     copy('src/public', 'build/public'),
     copy('src/content', 'build/content'),
     copy('package.json', 'build/package.json'),
-    copy('README.md', 'build/README.md')
+    copy('README.md', 'build/README.md'),
+    copy(path.join(__dirname, '../src/constants/SwearWords.txt'), path.join(__dirname, '../build/SwearWords.txt'))
   ]);
 
   replace({

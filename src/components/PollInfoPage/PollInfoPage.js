@@ -106,7 +106,6 @@ class PollInfoPage extends Component {
       );
     });
 
-
     if (this.state.poll) {
       return (
         <div className="PollInfoPage">

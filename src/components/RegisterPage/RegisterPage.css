@@ -2,8 +2,132 @@
 
 @import '../variables.css';
 
+:root {
+  --btn-dark-color: #2E2047;
+  --btn-reg-color: #834E70;
+  --btn-text-color: #DADEDE;
+}
+
 .RegisterPage-container {
-  margin: 0 auto;
+  margin: 0 2%;
   padding: 0 0 40px;
-  max-width: var(--max-content-width);
+  /*max-width: var(--max-content-width);*/
+}
+
+.RegisterPage form {
+  font-family: 'Open Sans Condensed', arial, sans;
+  width: 500px;
+  padding: 30px;
+  /*background: #FFFFFF;*/
+  /*margin: 50px auto;*/
+  /*box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);*/
+  /*-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);*/
+  /*-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);*/
+
+}
+.RegisterPage form h2{
+  background: #4D4D4D;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #797979;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 20px;
+  margin: -30px -30px 30px -30px;
+}
+.RegisterPage form input[type="text"],
+.RegisterPage form input[type="date"],
+.RegisterPage form input[type="datetime"],
+.RegisterPage form input[type="email"],
+.RegisterPage form input[type="number"],
+.RegisterPage form input[type="search"],
+.RegisterPage form input[type="time"],
+.RegisterPage form input[type="url"],
+.RegisterPage form input[type="password"],
+.RegisterPage form textarea,
+.RegisterPage form select
+{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #3a3a3a;
+  background: transparent;
+  margin-bottom: 10px;
+  font: 16px Arial, Helvetica, sans-serif;
+  height: 45px;
+}
+.RegisterPage form textarea{
+  resize:none;
+  overflow: hidden;
+}
+.RegisterPage form input[type="button"],
+.RegisterPage form input[type="submit"]{
+  -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  background-color: #2CBBBB;
+  border: 1px solid #27A0A0;
+  display: inline-block;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14px;
+  padding: 8px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.RegisterPage form input[type="button"]:hover,
+.RegisterPage form input[type="submit"]:hover {
+  background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+  background-color:#34CACA;
+}
+
+.RegisterPage button {
+  margin-right: 10px;
+  position: relative;
+  top: 0;
+  background: var(--btn-reg-color);
+  border-radius: 3px;
+  border: 0;
+  padding: 2px 10px;
+  box-shadow: 0 4px 0 var(--btn-dark-color);
+  line-height: 1;
+  cursor: pointer;
+  color: var(--btn-text-color);
+  /* Transitions go on the start frame. */
+  transition: box-shadow .1s, top .1s;
+}
+
+.RegisterPage button:hover {
+  margin-right: 10px;
+  position: relative;
+  border: 0;
+  box-shadow: 0 0px 0 DarkBlue;
+  top: 4px;
+  /* Things to fix btn. */
+  background: var(--btn-reg-color);
+  color: white;
+}
+
+.RegisterPage button:focus {
+  margin-right: 10px;
+  outline: 0;
+}
+
+.RegisterPage button:active {
+  margin-right: 10px;
+  box-shadow: 0 0 4px 4px color(var(--btn-reg-color) alpha(0.4));
+}
+
+.RegisterPage-errorBox {
+  display: none;
+  border: solid black 1px;
+  position: relative;
+  top: -50px;
+  left: 100%;
 }

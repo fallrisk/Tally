@@ -10,5 +10,6 @@
 import ncp from 'ncp';
 
 export default (source, dest) => new Promise((resolve, reject) => {
+  //console.log(source + ' => ' + dest);
   ncp(source, dest, err => err ? reject(err) : resolve());
 });
