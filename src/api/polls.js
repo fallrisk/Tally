@@ -117,6 +117,12 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/vote', async (req, res) => {
+  if (req.user) {
+    console.log('User is logged in');
+    console.log(req.user);
+  } else {
+    console.log('User is not logged in');
+  }
   if (req.query.pollId && req.query.voteChoice) {
     var userId = (req.user !== undefined) ? req.user.id : null;
     if (hasTheUserVoted(req.ip, userId, req.query.pollId)) {

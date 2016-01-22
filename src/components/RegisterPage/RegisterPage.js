@@ -36,7 +36,7 @@ class RegisterPage extends Component {
       })
       .timeout(2000)
       .end((err, res) => {
-        var self = this;
+        //var self = this;
         console.log('In request response.');
         if (err) {
           //console.log('Error occurred registering a new user.' + err);
