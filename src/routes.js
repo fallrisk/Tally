@@ -12,6 +12,7 @@ import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import LatestPolls from './components/LatestPolls';
 import PollInfoPage from './components/PollInfoPage';
+import NewPollPage from './components/NewPollPage';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
@@ -26,7 +27,9 @@ const router = new Router(on => {
 
   on('/register', async () => <RegisterPage />);
 
-  on('/poll/:id', async (state) => {
+  on('/polls/new', async () => <NewPollPage />);
+
+  on('/polls/:id', async (state) => {
     return <PollInfoPage pollId={state.params.id} />
   });
 

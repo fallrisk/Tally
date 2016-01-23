@@ -3,6 +3,7 @@
  */
 
 import { Router } from 'express';
+var debug = require('debug')('polls');
 
 const router = new Router();
 
@@ -16,7 +17,8 @@ var _polls = [
     dateCreated: Date.now(),
     pollName: 'Best Web Programming Site',
     pollOptions: ['Free Code Camp!'],
-    pollResults: [100]
+    pollResults: [100],
+    username: null
   },
   {
     id: 2,
@@ -24,7 +26,7 @@ var _polls = [
     pollName: 'Best Interpreted Programming Language',
     pollOptions: ['Python', 'Perl', 'Ruby'],
     pollResults: [90, 20, 60],
-    user: null
+    username: null
   },
   {
     id: 3,
@@ -32,7 +34,7 @@ var _polls = [
     pollName: 'Best Video Card',
     pollOptions: ["GeForce", "ATI Radeon", "Intel"],
     pollResults: [20, 30, 40],
-    user: null
+    username: null
   },
   {
     id: 4,
@@ -40,7 +42,7 @@ var _polls = [
     pollName: 'Best Past-time',
     pollOptions: ["Reading", "Writing", "Playing Video Games", "Sports"],
     pollResults: [30, 40, 50, 50],
-    user: null
+    username: null
   },
   {
     id: 5, dateCreated: Date.now(), pollName: 'Favorite Sport',
@@ -49,7 +51,7 @@ var _polls = [
       "Tennis", "Squash", "Bocce", "Curling"
     ],
     pollResults: [rand(100), 30, 40, 50, 60, 70, 80, 90],
-    user: null
+    username: null
   },
   {
     id: 6,
@@ -57,7 +59,7 @@ var _polls = [
     pollName: 'Best Number',
     pollOptions: ['2', '3.14', '69', '1'],
     pollResults: [2, 3, 69, 1],
-    user: null
+    username: null
   },
   {
     id: 7,
@@ -65,7 +67,7 @@ var _polls = [
     pollName: 'Best Compiled Programming Language',
     pollOptions: ['C', 'C++', 'Java'],
     pollResults: [15, 22, 44],
-    user: null
+    username: null
   }
 ];
 
@@ -112,6 +114,27 @@ function castVote(pollId, voteChoice) {
   return false;
 }
 
+function createPoll(name, options, username) {
+  debug('create');
+  var newPoll = {};
+  if (name !== '' && options.length !== 0) {
+    newPoll = {
+      id: _polls.length + 1,
+      dateCreated: Date.now(),
+      pollName: name,
+      pollOptions: options,
+      pollResults: Array.apply(null, Array(options.length)).map(Number.prototype.valueOf, 0),
+      username: username
+    };
+    debug('Made a new poll.');
+    debug(newPoll);
+    _polls.unshift(newPoll);
+    return(newPoll);
+  } else {
+    return(false);
+  }
+}
+
 router.get('/', async (req, res) => {
   res.status(200).json({polls: _polls, votes: _votes, userIp: req.ip});
 });
@@ -139,6 +162,21 @@ router.get('/vote', async (req, res) => {
     }
   } else {
     res.status(200).json({error: 'Invalid request', errorCode: 2});
+  }
+});
+
+router.post('/new', async (req, res) => {
+  debug('/new');
+  debug(req.body, req.user);
+  if (req.user === undefined) {
+    res.status(200).json({error: 'Not logged in.'});
+    return;
+  }
+  var newPoll = createPoll(req.body.poll.name, req.body.poll.options, req.user.username);
+  if (newPoll) {
+    res.status(200).json(newPoll);
+  } else {
+    res.status(200).json({error: 'New poll not created.', errorCode: 1});
   }
 });
 

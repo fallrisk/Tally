@@ -50,7 +50,7 @@ class Poll extends Component {
       <div className="LatestPolls-poll">
         <h2 className="LatestPolls-poll-title">{this.props.name}</h2>
         <PollChart data={this.props.pollResults} pollOptions={this.props.pollOptions} />
-        <a href={'/poll/' + this.props.id} onClick={Link.handleClick}>Place Vote</a>
+        <a href={'/polls/' + this.props.id} onClick={Link.handleClick}>Place Vote / View</a>
       </div>
     )
   }

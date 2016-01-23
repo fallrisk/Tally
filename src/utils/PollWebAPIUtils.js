@@ -42,5 +42,23 @@ export default {
           }
         }
       });
+  },
+  createPoll: poll => {
+    request.post(API_URL + '/new')
+      .timeout(2000)
+      .send({
+        poll: poll
+      })
+      .end((err, res) => {
+        if (err) {
+          console.log(err);
+        } else {
+          if (res.body.hasOwnProperty('error')) {
+            console.log('Error occurred creating the new poll.');
+          } else {
+            PollActions.createPoll(res.body);
+          }
+        }
+      });
   }
 };

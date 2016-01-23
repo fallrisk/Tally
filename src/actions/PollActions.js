@@ -23,5 +23,11 @@ export default {
       // the client will change what is displayed based on this, so it only hurts them if they try to spoof it.
       userIp: resData.userIp
     });
+  },
+  createPoll: (poll) => {
+    dispatcher.dispatch({
+      type: PollConstants.POLL_CREATE,
+      poll: poll
+    });
   }
 };

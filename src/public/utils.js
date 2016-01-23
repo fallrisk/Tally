@@ -49,7 +49,7 @@ var D3PollChart = {
       .attr('width', xScale);
     g.select('text')
       .text(function (d, i) {
-        return date[i];
+        return data[i];
       })
       .attr('transform', function(d, i) {
         return 'translate(0,' + i * barHeight + ')';

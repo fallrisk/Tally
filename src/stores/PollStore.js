@@ -5,20 +5,20 @@
 import dispatcher from '../core/Dispatcher';
 import PollConstants from '../constants/ActionTypes';
 import EventEmitter from 'eventemitter3';
+import PollWebAPIUtils from '../utils/PollWebAPIUtils';
 
 const CHANGE_EVENT = 'change';
 
 var _polls = [];
 
-//
-// Either the userId is set or the ip is set.
-// {pollId:, userId:, ip:,}
+// Either the username is set or the ip is set.
+// {pollId:, username:, ip:,}
 var _votes = [];
 
 var _userIp = null;
 
 // TODO JKW: This search algorithm is the trivial, garbage solution. This should be done with a much better algorithm.
-function hasTheUserVoted(ip, userId, pollId) {
+function hasTheUserVoted(ip, username, pollId) {
   if (_votes.length < 1) {
     return false;
   }
@@ -26,7 +26,7 @@ function hasTheUserVoted(ip, userId, pollId) {
   for (var i = 0; i < _votes.length; i++) {
     var vote = _votes[i];
     if (vote.pollId === pollId) {
-      if (vote.ip === ip || vote.userId === userId) {
+      if (vote.ip === ip || vote.username === username) {
         return true;
       }
     }
@@ -73,10 +73,27 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
         if (poll.pollOptions[i] === voteChoice) {
           poll.pollResults[i] += 1;
           // Add the vote to the list of votes.
-          var vote = {ip: _userIp, userId: null, pollId: parseInt(pollId)};
+          var vote = {ip: _userIp, username: null, pollId: parseInt(pollId)};
           _votes.push(vote);
         }
       }
+    }
+  },
+  createPoll: poll => {
+    var newPoll = {};
+    if (name !== '' && options.length !== 0) {
+      newPoll = {
+        id: _polls.length + 1,
+        dateCreated: Date.now(),
+        pollName: poll.name,
+        pollOptions: poll.options,
+        pollResults: Array.apply(null, Array(options.length)).map(Number.prototype.valueOf, 0),
+        username: poll.username
+      };
+      _polls.unshift(newPoll);
+      return true;
+    } else {
+      return false;
     }
   }
 });
@@ -86,6 +103,7 @@ PollStore.dispatchToken = dispatcher.register((action) => {
   switch (action.type) {
     case PollConstants.POLL_CREATE:
       console.log('POLL_CREATE');
+      PollWebAPIUtils.getAllPolls();
       break;
 
     case PollConstants.POLL_CAST_VOTE:

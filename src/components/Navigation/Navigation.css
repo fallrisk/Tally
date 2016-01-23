@@ -5,6 +5,7 @@
   padding: 3px 8px;
   text-decoration: none;
   font-size: 1.125em; /* ~18px */
+  cursor: pointer;
 }
 
 .Navigation-link,

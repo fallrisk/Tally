@@ -10,7 +10,4 @@ const API_URL = 'http://localhost:3000/api/users';
 
 export default {
   // TODO JKW: User stuff should be over TLS.
-  register: (username, password) => {
-
-  }
 };

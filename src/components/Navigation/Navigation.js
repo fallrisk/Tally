@@ -53,11 +53,15 @@ class Navigation extends Component {
 
   render() {
     if (this.state.user.loggedIn) {
+      // I decided I'm not going to support a user profile on this project.
+      //<a className="Navigation-link" href="/profile" onClick={Link.handleClick}>Profile</a>
+      //<span className="Navigation-spacer">or</span>
       return (
         <div className={classNames(this.props.className, 'Navigation')} role="navigation">
+          <a className="Navigation-link" href="/polls/new" onClick={Link.handleClick}>View My Polls</a>
+          <span className="Navigation-spacer">·</span>
+          <a className="Navigation-link" href="/polls/new" onClick={Link.handleClick}>Create a Poll</a>
           <span className="Navigation-spacer"> | </span>
-          <a className="Navigation-link" href="/profile" onClick={Link.handleClick}>Profile</a>
-          <span className="Navigation-spacer">or</span>
           <a className="Navigation-link" onClick={this._handleLogout}>Log out</a>
         </div>
       );
