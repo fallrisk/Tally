@@ -63,3 +63,10 @@
   font-weight: 800;
   fill: #DADEDE;
 }
+
+.MyPollsPage-pollLink {
+  display: inline-block;
+  padding: 3px 8px;
+  text-decoration: none;
+  cursor: pointer;
+}

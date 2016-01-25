@@ -45,12 +45,23 @@ class PollChart extends Component {
 }
 
 class Poll extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tweet: 'Vote on this poll I saw at http://localhost:3000/poll/'
+    }
+  }
+
   render() {
     return (
       <div className="LatestPolls-poll">
         <h2 className="LatestPolls-poll-title">{this.props.name}</h2>
         <PollChart data={this.props.pollResults} pollOptions={this.props.pollOptions} />
-        <a href={'/polls/' + this.props.id} onClick={Link.handleClick}>Place Vote / View</a>
+        <a className="LatestPolls-pollLink" href={'/polls/' + this.props.id} onClick={Link.handleClick}>Place Vote / View</a>
+        <span>·</span>
+        <a className="LatestPolls-pollLink" href={'https://twitter.com/intent/tweet?text=' + this.state.tweet + this.props.id}>
+          <i className='fa fa-twitter'></i>Share
+        </a>
       </div>
     )
   }

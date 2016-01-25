@@ -45,14 +45,24 @@ class PollChart extends Component {
 }
 
 class Poll extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tweet: 'Vote on my poll at http://localhost:3000/poll/'
+    }
+  }
+
   render() {
     return (
       <div className="MyPollsPage-poll">
         <h2 className="MyPollsPage-poll-title">{this.props.name}</h2>
         <PollChart data={this.props.pollResults} pollOptions={this.props.pollOptions} />
-        <a href={'/polls/' + this.props.id} onClick={Link.handleClick}>Place Vote / View</a>
+        <a className="MyPollsPage-pollLink" href={'/polls/' + this.props.id} onClick={Link.handleClick}>Place Vote / View</a>
+        <a className="MyPollsPage-pollLink" href={'https://twitter.com/intent/tweet?text=' + this.state.tweet + this.props.id}>
+          <i className='fa fa-twitter'></i>Share
+        </a>
       </div>
-    )
+    );
   }
 }
 
@@ -90,7 +100,7 @@ class MyPollsPage extends Component {
   };
 
   render() {
-    const title = 'Tally';
+    const title = 'My Polls';
     this.context.onSetTitle(title);
     if (this.state.userPolls.length > 0) {
       var pollNodes = this.state.userPolls.map((poll) => {
