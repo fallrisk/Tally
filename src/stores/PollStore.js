@@ -56,7 +56,6 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
     id = parseInt(id);
     for (var i = 0; i < _polls.length; i++) {
       if (_polls[i].id === id) {
-        console.log(_votes);
         return Object.assign(_polls[i], {hasVoted: hasTheUserVoted(_userIp, null, _polls[i].id)});
       }
     }
@@ -72,7 +71,6 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
     return false;
   },
   castVote: (pollId, voteChoice) => {
-    console.log(pollId);
     var poll = PollStore.get(pollId);
     if (poll) {
       for (var i = 0; i < poll.pollOptions.length; i++) {
@@ -108,7 +106,7 @@ PollStore.dispatchToken = dispatcher.register((action) => {
 
   switch (action.type) {
     case PollConstants.POLL_CREATE:
-      console.log('POLL_CREATE');
+      //console.log('POLL_CREATE');
       PollWebAPIUtils.getAllPolls();
       break;
 

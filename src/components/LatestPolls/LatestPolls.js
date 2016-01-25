@@ -21,7 +21,7 @@ class PollChart extends Component {
 
   componentDidUpdate() {
     var ele = ReactDOM.findDOMNode(this);
-    D3PollChart.update(ele, this.getChartState());
+    D3PollChart.update(ele, this.getChartState(), 30);
   }
 
   getChartState() {

@@ -8,6 +8,7 @@ import withStyles from '../../decorators/withStyles';
 import styles from './MyPollsPage.css';
 import PollStore from '../../stores/PollStore';
 import Link from '../Link';
+import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
 
 class PollChart extends Component {
 
@@ -58,9 +59,12 @@ class Poll extends Component {
         <h2 className="MyPollsPage-poll-title">{this.props.name}</h2>
         <PollChart data={this.props.pollResults} pollOptions={this.props.pollOptions} />
         <a className="MyPollsPage-pollLink" href={'/polls/' + this.props.id} onClick={Link.handleClick}>Place Vote / View</a>
+        <span>·</span>
         <a className="MyPollsPage-pollLink" href={'https://twitter.com/intent/tweet?text=' + this.state.tweet + this.props.id}>
           <i className='fa fa-twitter'></i>Share
         </a>
+        <span>·</span>
+        <a className="MyPollsPage-pollLink" href="#" onClick={this.props.onDelete.bind(this, this.props.id)}>Delete</a>
       </div>
     );
   }
@@ -75,6 +79,7 @@ class MyPollsPage extends Component {
     };
     this.getStateFromStores = this.getStateFromStores.bind(this);
     this._onChange = this._onChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   getStateFromStores() {
@@ -99,13 +104,22 @@ class MyPollsPage extends Component {
     onSetTitle: PropTypes.func.isRequired,
   };
 
+  handleDelete(pollId, e) {
+    e.preventDefault();
+    //console.log('Attempting to delete poll with ID ' + pollId);
+    PollWebAPIUtils.deletePoll(pollId);
+  }
+
   render() {
     const title = 'My Polls';
     this.context.onSetTitle(title);
     if (this.state.userPolls.length > 0) {
       var pollNodes = this.state.userPolls.map((poll) => {
         return (
-          <Poll key={poll.id} id={poll.id} name={poll.pollName} pollOptions={poll.pollOptions} pollResults={poll.pollResults} />
+          <Poll key={poll.id} id={poll.id} name={poll.pollName}
+                pollOptions={poll.pollOptions} pollResults={poll.pollResults}
+                onDelete={this.handleDelete}
+          />
         )
       });
       return (

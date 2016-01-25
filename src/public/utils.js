@@ -49,7 +49,7 @@ var D3PollChart = {
       .attr('width', xScale);
     g.select('text')
       .text(function (d, i) {
-        return data[i];
+        return columnNames[i];
       })
       .attr('transform', function(d, i) {
         return 'translate(0,' + i * barHeight + ')';
@@ -75,7 +75,7 @@ var D3PollChart = {
         })
         .attr('transform', function(d, i) {
           return 'translate(0,' + i * barHeight + ')';
-        });;
+        });
     }
   }
 };

@@ -6,8 +6,8 @@ import { Router } from 'express';
 import path from 'path';
 import fs from 'fs';
 import lineReader from 'readline';
-import debug from 'debug';
 import passport from 'passport';
+var debug = require('debug')('api:users');
 
 // Array of foul words we don't part of a username.
 const _foulWords = [];
@@ -59,6 +59,16 @@ function createNewUser(req, res) {
   res.status(200).json({response: 'New user created.'}
   );
 }
+
+router.post('/check', async (req, res) => {
+  debug('Ran user check.');
+  if (req.hasOwnProperty('user')) {
+    res.status(200).json({username: req.user.username});
+    debug('User check succeeded.');
+  }
+  res.status(200).json({error: 'Not logged in.', errorCode: 1});
+  debug('User check failed.');
+});
 
 router.post('/register', async (req, res) => {
   // Here we register the user or send an error back because the form had an error.

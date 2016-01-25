@@ -8,6 +8,24 @@ import PollActions from '../actions/PollActions';
 
 const API_URL = 'http://localhost:3000/api/users';
 
+// TODO JKW: User stuff should be over TLS.
 export default {
-  // TODO JKW: User stuff should be over TLS.
+  // Checks to see if the user is logged in and grabs the user info to put in the store.
+  getLoggedInData: () => {
+    request.post(API_URL + '/check')
+      .timeout(2000)
+      .end((err, res) => {
+        if (err) {
+          console.log(err);
+        } else {
+          if (res.body.hasOwnProperty('error')) {
+
+          } else {
+            // Successful login.
+            // Redirect on successful login.
+            UserActions.userLoggedIn(req.body.username);
+          }
+        }
+      });
+  }
 };

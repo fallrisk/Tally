@@ -70,7 +70,6 @@ class PollInfoPage extends Component {
   }
 
   getStateFromStores() {
-    console.log('getState: ' + this.props.pollId);
     return {
       poll: PollStore.get(this.props.pollId)
     };
@@ -94,7 +93,6 @@ class PollInfoPage extends Component {
 
   render() {
     var hasVoted = (this.state.poll.hasVoted) ? this.state.poll.hasVoted : false;
-    console.log('Making poll options.' + hasVoted);
     var pollOptionNodes = this.state.poll.pollOptions.map((option) => {
       if (hasVoted) {
         return (

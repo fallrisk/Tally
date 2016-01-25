@@ -7,9 +7,11 @@ import ReactDOM from 'react-dom';
 import withStyles from '../../decorators/withStyles';
 import styles from './NewPollPage.css';
 import PollStore from '../../stores/PollStore';
+import UserStore from '../../stores/UserStore';
 import Link from '../Link';
 import PollActions from '../../actions/PollActions';
 import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
+import Location from '../../core/Location';
 
 @withStyles(styles)
 class NewPollPage extends Component {
@@ -63,18 +65,17 @@ class NewPollPage extends Component {
     e.preventDefault();
     // On a submit build the poll options from the input boxes, but remove the options
     // that are empty.
-    //console.log(this.state);
     PollWebAPIUtils.createPoll({
       name: this.state.name,
       options: this.state.options
     });
+    Location.pushState('/polls/user/' + UserStore.get().username);
   }
 
   render() {
     const title = 'New Poll';
     this.context.onSetTitle(title);
 
-    console.log('Number of options: ' + this.state.options.length);
     var pollOptionNodes = this.state.options.map((option, i) => {
       return (
         <div className="NewPollPage-formGroup">

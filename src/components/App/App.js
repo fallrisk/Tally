@@ -7,14 +7,15 @@ import withStyles from '../../decorators/withStyles';
 import Header from '../Header';
 import Footer from '../Footer';
 import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
-
-PollWebAPIUtils.getAllPolls();
+import UserWebAPIUtils from '../../utils/UserWebAPIUtils';
 
 @withContext
 @withStyles(styles)
 class App extends Component {
   constructor(props) {
     super(props);
+    PollWebAPIUtils.getAllPolls();
+    UserWebAPIUtils.getLoggedInData();
   }
 
   static propTypes = {

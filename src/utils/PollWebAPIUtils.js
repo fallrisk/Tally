@@ -60,5 +60,37 @@ export default {
           }
         }
       });
+  },
+  deletePoll: pollId => {
+    var self = this;
+    request.post(API_URL + '/delete')
+      .timeout(2000)
+      .send({
+        pollId: pollId
+      })
+      .end((err, res) => {
+        if (err) {
+          console.log(err);
+        } else {
+          if (res.body.hasOwnProperty('error')) {
+            console.log('Error occurred creating the new poll.');
+          } else {
+            request.get(API_URL)
+              .timeout(2000)
+              .end( (err, res) => {
+                if (err) {
+                  console.log('Error occurred getting Polls.', err);
+                } else {
+                  var resData = JSON.parse(res.text);
+                  if (resData.hasOwnProperty('error')) {
+
+                  } else {
+                    PollActions.receiveAll(resData);
+                  }
+                }
+              });
+          }
+        }
+      });
   }
 };

@@ -3,7 +3,7 @@
  */
 
 import { Router } from 'express';
-var debug = require('debug')('polls');
+var debug = require('debug')('api:polls');
 
 const router = new Router();
 
@@ -177,6 +177,29 @@ router.post('/new', async (req, res) => {
     res.status(200).json(newPoll);
   } else {
     res.status(200).json({error: 'New poll not created.', errorCode: 1});
+  }
+});
+
+router.post('/delete', async (req, res) => {
+  debug('Received delete request.');
+  if (req.body.hasOwnProperty('pollId')) {
+    // Find the poll with PollId.
+    var pollIndex = -1;
+    var match = _polls.filter( (poll,i) => {
+      if (poll.id === req.body.pollId) {
+        pollIndex = i;
+        return true;
+      }
+      return false;
+    });
+    if (match) {
+      _polls.splice(pollIndex, 1);
+      res.status(200).json({status: 'Poll removed.'});
+    } else {
+      res.status(200).json({error: 'Poll not found.'});
+    }
+  } else {
+    res.status(200).json({error: 'Poll Id not provided.'});
   }
 });
 
