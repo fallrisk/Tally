@@ -1,0 +1,65 @@
+/**
+ * References:
+ *   * https://css-tricks.com/dont-overthink-it-grids/
+ */
+
+.MyPollsPage {
+
+}
+
+.MyPollsPage-container {
+  margin: 0 2%;
+}
+
+.MyPollsPage-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.MyPollsPage-polls-container {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.MyPollsPage-poll {
+  width: 30%;
+  display: inline-block;
+  border-radius: 5px;
+  border: solid 1px #2E2047;
+  margin: 5px;
+}
+
+.MyPollsPage-PollChart rect {
+  fill: #5D6D87;
+}
+
+.MyPollsPage-PollChart svg {
+  /*margin-bottom: 5px;*/
+}
+
+.MyPollsPage-poll-title {
+  text-align: center;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+.MyPollsPage-PollChart text {
+  font-size:  16px;
+  font-family: "Open Sans Mono";
+  paint-order: stroke;
+  stroke: #000000;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  font-weight: 800;
+  fill: #DADEDE;
+}

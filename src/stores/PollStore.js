@@ -36,6 +36,15 @@ function hasTheUserVoted(ip, username, pollId) {
 }
 
 var PollStore = Object.assign({}, EventEmitter.prototype, {
+  emitChange: () => {
+    PollStore.emit(CHANGE_EVENT);
+  },
+  addChangeListener: (callback) => {
+    PollStore.on(CHANGE_EVENT, callback);
+  },
+  removeChangeListener: (callback) => {
+    PollStore.removeListener(CHANGE_EVENT, callback);
+  },
   getAll: () => {
     return _polls;
   },
@@ -53,14 +62,11 @@ var PollStore = Object.assign({}, EventEmitter.prototype, {
     }
     return null;
   },
-  emitChange: () => {
-    PollStore.emit(CHANGE_EVENT);
-  },
-  addChangeListener: (callback) => {
-    PollStore.on(CHANGE_EVENT, callback);
-  },
-  removeChangeListener: (callback) => {
-    PollStore.removeListener(CHANGE_EVENT, callback);
+  getUserPolls(username) {
+    var userPolls = _polls.filter(poll => {
+      return poll.username === username;
+    });
+    return userPolls;
   },
   hasVoted: (pollId, user, ip) => {
     return false;

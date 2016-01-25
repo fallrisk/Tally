@@ -13,6 +13,7 @@ import ErrorPage from './components/ErrorPage';
 import LatestPolls from './components/LatestPolls';
 import PollInfoPage from './components/PollInfoPage';
 import NewPollPage from './components/NewPollPage';
+import MyPollsPage from './components/MyPollsPage';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
@@ -28,6 +29,10 @@ const router = new Router(on => {
   on('/register', async () => <RegisterPage />);
 
   on('/polls/new', async () => <NewPollPage />);
+
+  on('/polls/user/:username', async (state) => {
+    return <MyPollsPage username={state.params.username} />
+  });
 
   on('/polls/:id', async (state) => {
     return <PollInfoPage pollId={state.params.id} />

@@ -5,7 +5,7 @@
 import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import withStyles from '../../decorators/withStyles';
-import styles from './LatestPolls.css';
+import styles from './MyPollsPage.css';
 import PollStore from '../../stores/PollStore';
 import Link from '../Link';
 
@@ -39,7 +39,7 @@ class PollChart extends Component {
 
   render() {
     return (
-      <div className="LatestPolls-PollChart"></div>
+      <div className="MyPollsPage-PollChart"></div>
     )
   }
 }
@@ -47,8 +47,8 @@ class PollChart extends Component {
 class Poll extends Component {
   render() {
     return (
-      <div className="LatestPolls-poll">
-        <h2 className="LatestPolls-poll-title">{this.props.name}</h2>
+      <div className="MyPollsPage-poll">
+        <h2 className="MyPollsPage-poll-title">{this.props.name}</h2>
         <PollChart data={this.props.pollResults} pollOptions={this.props.pollOptions} />
         <a href={'/polls/' + this.props.id} onClick={Link.handleClick}>Place Vote / View</a>
       </div>
@@ -57,11 +57,11 @@ class Poll extends Component {
 }
 
 @withStyles(styles)
-class LatestPolls extends Component {
+class MyPollsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      latestPolls: PollStore.getLatest()
+      userPolls: PollStore.getUserPolls(this.props.username)
     };
     this.getStateFromStores = this.getStateFromStores.bind(this);
     this._onChange = this._onChange.bind(this);
@@ -69,7 +69,7 @@ class LatestPolls extends Component {
 
   getStateFromStores() {
     return {
-      latestPolls: PollStore.getLatest()
+      userPolls: PollStore.getUserPolls(this.props.username)
     };
   }
 
@@ -92,23 +92,35 @@ class LatestPolls extends Component {
   render() {
     const title = 'Tally';
     this.context.onSetTitle(title);
-    var pollNodes = this.state.latestPolls.map((poll) => {
+    if (this.state.userPolls.length > 0) {
+      var pollNodes = this.state.userPolls.map((poll) => {
+        return (
+          <Poll key={poll.id} id={poll.id} name={poll.pollName} pollOptions={poll.pollOptions} pollResults={poll.pollResults} />
+        )
+      });
       return (
-        <Poll key={poll.id} id={poll.id} name={poll.pollName} pollOptions={poll.pollOptions} pollResults={poll.pollResults} />
-      )
-    });
-    return (
-      <div className="LatestPolls">
-        <div className="LatestPolls-container">
-          <h1>Latest Polls</h1>
-          <div className="LatestPolls-polls-container">
-            {pollNodes}
+        <div className="MyPollsPage">
+          <div className="MyPollsPage-container">
+            <h1>Your Polls</h1>
+            <div className="MyPollsPage-polls-container">
+              {pollNodes}
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="MyPollsPage">
+          <div className="MyPollsPage-container">
+            <h1>Your Polls</h1>
+            <p>You currently have not created any polls. You should <a href="/polls/new">create a poll</a>.</p>
+          </div>
+        </div>
+      );
+    }
+
   }
 
 }
 
-export default LatestPolls;
+export default MyPollsPage;

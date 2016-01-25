@@ -58,7 +58,7 @@ class Navigation extends Component {
       //<span className="Navigation-spacer">or</span>
       return (
         <div className={classNames(this.props.className, 'Navigation')} role="navigation">
-          <a className="Navigation-link" href="/polls/new" onClick={Link.handleClick}>View My Polls</a>
+          <a className="Navigation-link" href={'/polls/user/' + this.state.user.username} onClick={Link.handleClick}>View My Polls</a>
           <span className="Navigation-spacer">·</span>
           <a className="Navigation-link" href="/polls/new" onClick={Link.handleClick}>Create a Poll</a>
           <span className="Navigation-spacer"> | </span>
