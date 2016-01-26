@@ -72,10 +72,12 @@ class LatestPolls extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      latestPolls: PollStore.getLatest()
+      latestPolls: []
     };
     this.getStateFromStores = this.getStateFromStores.bind(this);
     this._onChange = this._onChange.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.componentWillUnmount = this.componentWillUnmount.bind(this);
   }
 
   getStateFromStores() {
@@ -86,6 +88,7 @@ class LatestPolls extends Component {
 
   componentDidMount() {
     PollStore.addChangeListener(this._onChange);
+    this.setState({latestPolls: PollStore.getLatest()});
   }
 
   componentWillUnmount() {
@@ -93,6 +96,7 @@ class LatestPolls extends Component {
   }
 
   _onChange() {
+    console.log('LatestPollsGotChangeEvent');
     this.setState(this.getStateFromStores());
   }
 
@@ -101,6 +105,8 @@ class LatestPolls extends Component {
   };
 
   render() {
+    console.log('rendered');
+    console.log(this.state.latestPolls);
     const title = 'Tally';
     this.context.onSetTitle(title);
     var pollNodes = this.state.latestPolls.map((poll) => {

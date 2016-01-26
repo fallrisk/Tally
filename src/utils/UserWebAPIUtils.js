@@ -4,7 +4,8 @@
 
 import dispatcher from '../core/Dispatcher';
 import request from 'superagent';
-import PollActions from '../actions/PollActions';
+//import PollActions from '../actions/PollActions';
+import UserActions from '../actions/UserActions';
 
 const API_URL = 'http://localhost:3000/api/users';
 
@@ -23,7 +24,7 @@ export default {
           } else {
             // Successful login.
             // Redirect on successful login.
-            UserActions.userLoggedIn(req.body.username);
+            UserActions.userLoggedIn(res.body.username);
           }
         }
       });

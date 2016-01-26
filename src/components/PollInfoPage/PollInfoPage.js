@@ -18,6 +18,8 @@ class PollChart extends Component {
     super(props);
     this.componentDidUpdate = this.componentDidUpdate.bind(this);
     this.getChartState = this.getChartState.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.componentWillUnmount = this.componentWillUnmount.bind(this);
   }
 
   componentDidMount() {
@@ -93,14 +95,14 @@ class PollInfoPage extends Component {
 
   render() {
     var hasVoted = (this.state.poll.hasVoted) ? this.state.poll.hasVoted : false;
-    var pollOptionNodes = this.state.poll.pollOptions.map((option) => {
+    var pollOptionNodes = this.state.poll.pollOptions.map((option, i) => {
       if (hasVoted) {
         return (
-          <div><span>{option}</span></div>
+          <div key={i}><span>{option}</span></div>
         )
       }
       return (
-        <div><button onClick={this.vote.bind(this, option)}>Vote for</button><span>{option}</span></div>
+        <div key={i}><button onClick={this.vote.bind(this, option)}>Vote for</button><span>{option}</span></div>
       );
     });
 

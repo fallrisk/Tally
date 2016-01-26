@@ -14,6 +14,7 @@ import LatestPolls from './components/LatestPolls';
 import PollInfoPage from './components/PollInfoPage';
 import NewPollPage from './components/NewPollPage';
 import MyPollsPage from './components/MyPollsPage';
+import EditPollPage from './components/EditPollPage';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
@@ -29,6 +30,10 @@ const router = new Router(on => {
   on('/register', async () => <RegisterPage />);
 
   on('/polls/new', async () => <NewPollPage />);
+
+  on('/polls/edit/:pollId', async (state) => {
+    return <EditPollPage pollId={state.params.pollId} />
+  })
 
   on('/polls/user/:username', async (state) => {
     return <MyPollsPage username={state.params.username} />

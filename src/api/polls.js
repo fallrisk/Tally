@@ -180,6 +180,36 @@ router.post('/new', async (req, res) => {
   }
 });
 
+router.post('/update', async (req, res) => {
+  debug('Received update request.',req.body);
+  if (req.body.hasOwnProperty('pollId')
+    && req.body.hasOwnProperty('options')
+    && req.body.hasOwnProperty('name'))
+  {
+    var pollIndex = -1;
+    var match = _polls.filter( (poll,i) => {
+      if (poll.id === req.body.pollId) {
+        pollIndex = i;
+        return true;
+      }
+      return false;
+    });
+    if (match) {
+      debug('Found poll ID match.');
+      _polls[pollIndex].pollName = req.body.name;
+      _polls[pollIndex].pollOptions = req.body.options;
+      // Reset the results.
+      _polls[pollIndex].pollResults = Array.apply(null, Array(_polls[pollIndex].pollOptions.length)).map(Number.prototype.valueOf, 0);
+      debug(_polls);
+      res.status(200).json({status: 'Poll updated.'});
+    } else {
+      res.status(200).json({error: 'Poll not found.'});
+    }
+  } else {
+    res.status(200).json({error: 'Poll Id not provided.'});
+  }
+});
+
 router.post('/delete', async (req, res) => {
   debug('Received delete request.');
   if (req.body.hasOwnProperty('pollId')) {

@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9739c5-06da-41b2-8b97-348558085279" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/EditPollPage/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Justin.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Justin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/polls.js" afterPath="$PROJECT_DIR$/src/api/polls.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/users.js" afterPath="$PROJECT_DIR$/src/api/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App/App.js" afterPath="$PROJECT_DIR$/src/components/App/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.js" afterPath="$PROJECT_DIR$/src/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" afterPath="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MyPollsPage/MyPollsPage.js" afterPath="$PROJECT_DIR$/src/components/MyPollsPage/MyPollsPage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/NewPollPage/NewPollPage.js" afterPath="$PROJECT_DIR$/src/components/NewPollPage/NewPollPage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js" afterPath="$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/public/utils.js" afterPath="$PROJECT_DIR$/src/public/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stores/PollStore.js" afterPath="$PROJECT_DIR$/src/stores/PollStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes.js" afterPath="$PROJECT_DIR$/src/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/PollWebAPIUtils.js" afterPath="$PROJECT_DIR$/src/utils/PollWebAPIUtils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/UserWebAPIUtils.js" afterPath="$PROJECT_DIR$/src/utils/UserWebAPIUtils.js" />
     </list>
@@ -34,148 +35,107 @@
     <favorites_list name="Tally" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MyPollsPage.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/MyPollsPage/MyPollsPage.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.3984375">
-                  <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LoginPage.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/LoginPage/LoginPage.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-                  <folding>
-                    <element signature="e#1#73#0" expanded="false" />
-                    <element signature="e#433#481#0" expanded="false" />
-                    <element signature="n#!!block;n#constructor#0;n#LoginPage#0" expanded="false" />
-                    <element signature="e#542#588#0" expanded="false" />
-                    <element signature="n#!!block;n#_onChange#0;n#LoginPage#0" expanded="false" />
-                    <element signature="n#!!block;n#_handleLogin#0;n#LoginPage#0" expanded="false" />
-                    <element signature="e#952#1038#0" expanded="false" />
-                    <element signature="e#1086#1455#0" expanded="false" />
-                    <element signature="e#1105#1174#0" expanded="false" />
-                    <element signature="e#1180#1447#0" expanded="false" />
-                    <element signature="e#1230#1244#0" expanded="false" />
-                    <element signature="e#1250#1437#0" expanded="false" />
-                    <element signature="e#1264#1284#0" expanded="false" />
-                    <element signature="n#!!block;n#render#0;n#LoginPage#0" expanded="false" />
-                    <element signature="e#1559#2246#0" expanded="false" />
-                    <element signature="e#1595#2233#0" expanded="false" />
-                    <element signature="e#1670#2218#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PollWebAPIUtils.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/utils/PollWebAPIUtils.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#336#624#0" expanded="false" />
-                    <element signature="e#355#427#0" expanded="false" />
-                    <element signature="e#433#616#0" expanded="false" />
-                    <element signature="e#528#542#0" expanded="false" />
-                    <element signature="e#548#606#0" expanded="false" />
-                    <element signature="e#668#1303#0" expanded="false" />
-                    <element signature="e#807#1297#0" expanded="false" />
-                    <element signature="e#826#897#0" expanded="false" />
-                    <element signature="e#903#1289#0" expanded="false" />
-                    <element signature="e#998#1217#0" expanded="false" />
-                    <element signature="e#1112#1205#0" expanded="false" />
-                    <element signature="e#1223#1279#0" expanded="false" />
-                    <element signature="e#1327#1734#0" expanded="false" />
-                    <element signature="e#1397#1425#0" expanded="false" />
-                    <element signature="e#1760#2616#0" expanded="false" />
-                    <element signature="e#2210#2578#0" expanded="false" />
-                    <element signature="e#2237#2325#0" expanded="false" />
-                    <element signature="e#2331#2562#0" expanded="false" />
-                    <element signature="e#2442#2464#0" expanded="false" />
-                    <element signature="e#2470#2544#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="polls.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/api/polls.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.14955357">
-                  <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-                  <folding>
-                    <element signature="n#!!block;n#rand#0" expanded="false" />
-                    <element signature="e#232#1652#0" expanded="false" />
-                    <element signature="e#236#405#0" expanded="false" />
-                    <element signature="e#409#604#0" expanded="false" />
-                    <element signature="e#608#789#0" expanded="false" />
-                    <element signature="e#793#998#0" expanded="false" />
-                    <element signature="e#1002#1288#0" expanded="false" />
-                    <element signature="e#1085#1206#0" expanded="false" />
-                    <element signature="e#1292#1460#0" expanded="false" />
-                    <element signature="e#1464#1650#0" expanded="false" />
-                    <element signature="n#!!block;n#hasTheUserVoted#0" expanded="false" />
-                    <element signature="e#1900#1923#0" expanded="false" />
-                    <element signature="e#1966#2120#0" expanded="false" />
-                    <element signature="e#2026#2116#0" expanded="false" />
-                    <element signature="e#2080#2110#0" expanded="false" />
-                    <element signature="n#!!block;n#getPoll#0" expanded="false" />
-                    <element signature="e#2313#2344#0" expanded="false" />
-                    <element signature="n#!!block;n#createPoll#0" expanded="false" />
-                    <element signature="e#2776#3134#0" expanded="false" />
-                    <element signature="e#2792#3028#0" expanded="false" />
-                    <element signature="e#3140#3164#0" expanded="false" />
-                    <element signature="e#3204#3279#0" expanded="false" />
-                    <element signature="e#3795#4044#0" expanded="false" />
-                    <element signature="e#4050#4131#0" expanded="false" />
-                    <element signature="e#4266#4647#0" expanded="false" />
-                    <element signature="e#4344#4414#0" expanded="false" />
-                    <element signature="e#4520#4560#0" expanded="false" />
-                    <element signature="e#4566#4645#0" expanded="false" />
-                    <element signature="e#4694#5258#0" expanded="false" />
-                    <element signature="e#5293#5355#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PollStore.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/stores/PollStore.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PollInfoPage.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="PollWebAPIUtils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/PollWebAPIUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="polls.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/polls.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="202" column="9" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
+              <folding>
+                <element signature="n#!!block;n#rand#0" expanded="false" />
+                <element signature="e#232#1652#0" expanded="false" />
+                <element signature="e#236#405#0" expanded="false" />
+                <element signature="e#409#604#0" expanded="false" />
+                <element signature="e#608#789#0" expanded="false" />
+                <element signature="e#793#998#0" expanded="false" />
+                <element signature="e#1002#1288#0" expanded="false" />
+                <element signature="e#1085#1206#0" expanded="false" />
+                <element signature="e#1292#1460#0" expanded="false" />
+                <element signature="e#1464#1650#0" expanded="false" />
+                <element signature="n#!!block;n#hasTheUserVoted#0" expanded="false" />
+                <element signature="e#1900#1923#0" expanded="false" />
+                <element signature="e#1966#2120#0" expanded="false" />
+                <element signature="e#2026#2116#0" expanded="false" />
+                <element signature="e#2080#2110#0" expanded="false" />
+                <element signature="n#!!block;n#getPoll#0" expanded="false" />
+                <element signature="e#2282#2348#0" expanded="false" />
+                <element signature="e#2313#2344#0" expanded="false" />
+                <element signature="n#!!block;n#castVote#0" expanded="false" />
+                <element signature="e#2449#2627#0" expanded="false" />
+                <element signature="e#2505#2623#0" expanded="false" />
+                <element signature="e#2553#2617#0" expanded="false" />
+                <element signature="n#!!block;n#createPoll#0" expanded="false" />
+                <element signature="e#2776#3134#0" expanded="false" />
+                <element signature="e#2792#3028#0" expanded="false" />
+                <element signature="e#3140#3164#0" expanded="false" />
+                <element signature="e#3204#3279#0" expanded="false" />
+                <element signature="e#3323#4222#0" expanded="false" />
+                <element signature="e#3341#3411#0" expanded="false" />
+                <element signature="e#3417#3464#0" expanded="false" />
+                <element signature="e#3513#4141#0" expanded="false" />
+                <element signature="e#3638#3727#0" expanded="false" />
+                <element signature="e#3733#4137#0" expanded="false" />
+                <element signature="e#3795#4044#0" expanded="false" />
+                <element signature="e#4050#4131#0" expanded="false" />
+                <element signature="e#4147#4220#0" expanded="false" />
+                <element signature="e#4266#4647#0" expanded="false" />
+                <element signature="e#4344#4414#0" expanded="false" />
+                <element signature="e#4520#4560#0" expanded="false" />
+                <element signature="e#4566#4645#0" expanded="false" />
+                <element signature="e#5655#6219#0" expanded="false" />
+                <element signature="e#5735#6146#0" expanded="false" />
+                <element signature="e#5838#5958#0" expanded="false" />
+                <element signature="e#5879#5932#0" expanded="false" />
+                <element signature="e#5976#6073#0" expanded="false" />
+                <element signature="e#6079#6142#0" expanded="false" />
+                <element signature="e#6152#6217#0" expanded="false" />
+                <element signature="e#6254#6316#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LatestPolls.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PollInfoPage.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.18038331">
+              <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserWebAPIUtils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/UserWebAPIUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -192,10 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/variables.css" />
-        <option value="$PROJECT_DIR$/src/components/Poll/Poll.css" />
-        <option value="$PROJECT_DIR$/src/components/Poll/package.json" />
-        <option value="$PROJECT_DIR$/src/components/Poll/Poll.js" />
         <option value="$PROJECT_DIR$/src/components/PollInfoPage/Poll.js" />
         <option value="$PROJECT_DIR$/src/components/PollInfoPage/package.json" />
         <option value="$USER_HOME$/AppData/Local/Temp/style.css" />
@@ -226,23 +182,27 @@
         <option value="$PROJECT_DIR$/tools/serve.js" />
         <option value="$PROJECT_DIR$/src/components/MyPollsPage/package.json" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Navigation.js" />
-        <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.css" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Navigation.css" />
         <option value="$PROJECT_DIR$/src/components/MyPollsPage/MyPollsPage.css" />
-        <option value="$PROJECT_DIR$/src/utils/UserWebAPIUtils.js" />
         <option value="$PROJECT_DIR$/src/components/App/App.js" />
         <option value="$PROJECT_DIR$/src/components/LoginPage/LoginPage.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/api/users.js" />
-        <option value="$PROJECT_DIR$/src/components/NewPollPage/NewPollPage.js" />
-        <option value="$PROJECT_DIR$/src/api/polls.js" />
         <option value="$PROJECT_DIR$/src/stores/PollStore.js" />
-        <option value="$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js" />
-        <option value="$PROJECT_DIR$/src/utils/PollWebAPIUtils.js" />
-        <option value="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" />
         <option value="$PROJECT_DIR$/src/public/utils.js" />
+        <option value="$PROJECT_DIR$/src/components/EditPollPage/package.json" />
+        <option value="$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.css" />
         <option value="$PROJECT_DIR$/src/components/MyPollsPage/MyPollsPage.js" />
+        <option value="$PROJECT_DIR$/src/routes.js" />
+        <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/src/components/NewPollPage/NewPollPage.js" />
+        <option value="$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.js" />
+        <option value="$PROJECT_DIR$/src/utils/PollWebAPIUtils.js" />
+        <option value="$PROJECT_DIR$/src/utils/UserWebAPIUtils.js" />
+        <option value="$PROJECT_DIR$/src/api/polls.js" />
+        <option value="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" />
+        <option value="$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js" />
       </list>
     </option>
   </component>
@@ -254,10 +214,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="32" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="y" value="40" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -312,76 +272,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tally" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tally" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tally" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tally" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tally" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tally" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
+              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,7 +293,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="js-jscs-package" value="C:\Users\Justin\WebstormProjects\Tally\node_modules\jscs" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="Latest&#9;FILE&#9;file://E:/Tally/src/components/LatestPolls/LatestPolls.js&#10;utils.js&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;Pollinfo&#9;FILE&#9;file://E:/Tally/src/components/PollInfoPage/PollInfoPage.js&#10;PollInfor&#9;null&#9;null&#10;Pollstore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;MyPo&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.js&#10;PollWeb&#9;FILE&#9;file://E:/Tally/src/utils/PollWebAPIUtils.js&#10;newPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;users.js&#9;FILE&#9;file://E:/Tally/src/api/users.js&#10;polls.js&#9;FILE&#9;file://E:/Tally/src/api/polls.js&#10;packag&#9;FILE&#9;file://E:/Tally/package.json&#10;packa&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/package.json&#10;App.js&#9;FILE&#9;file://E:/Tally/src/app.js&#10;LoginPage&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;UserWeb&#9;FILE&#9;file://E:/Tally/src/utils/UserWebAPIUtils.js&#10;UserStore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;userstore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;Login&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;NewPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;app.js&#9;FILE&#9;file://E:/Tally/src/components/App/App.js&#10;Latestpo.css&#9;FILE&#9;file://E:/Tally/src/components/LatestPolls/LatestPolls.css&#10;navigation.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;Navigation.css&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.css&#10;routes.js&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;PollStore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;route.&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;Run&#9;ACTION&#9;ActivateRunToolWindow&#10;router&#9;FILE&#9;file://E:/Tally/node_modules/browser-sync/node_modules/browser-sync-ui/node_modules/weinre/node_modules/express/node_modules/connect/lib/middleware/router.js&#10;naviga.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;mypolls.css&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.css&#10;Poll&#9;FILE&#9;file://K:/Tally/src/utils/PollWebAPIUtils.js&#10;lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;log&#9;FILE&#9;file://K:/Tally/src/components/LoginPage/LoginPage.js&#10;Lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;pollstore&#9;FILE&#9;file://K:/Tally/src/stores/PollStore.js&#10;poll.js&#9;FILE&#9;file://K:/Tally/src/utils/PollWebAPIUtils.js&#10;footer&#9;FILE&#9;file://E:/Tally/src/components/Footer/Footer.js&#10;Na&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;utils&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;PollSto&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;PollW&#9;FILE&#9;file://E:/Tally/src/utils/PollWebAPIUtils.js&#10;Web&#9;FILE&#9;file://E:/Tally/src/utils/UserWebAPIUtils.js&#10;pollac&#9;FILE&#9;file://E:/Tally/src/actions/PollActions.js&#10;login&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.css&#10;routes&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;routerjs&#9;FILE&#9;file://E:/Tally/node_modules/browser-sync/node_modules/browser-sync-ui/node_modules/weinre/node_modules/express/node_modules/connect/lib/middleware/router.js&#10;navijs&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;logi&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;late&#9;FILE&#9;file://E:/Tally/src/components/LatestPolls/LatestPolls.js&#10;route&#9;FILE&#9;file://E:/Tally/src/routes.js" />
+    <property name="SearchEverywhereHistoryKey" value="PollInfoPage&#9;FILE&#9;file://K:/Tally/src/components/PollInfoPage/PollInfoPage.js&#10;Latest&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;UserW&#9;FILE&#9;file://K:/Tally/src/utils/UserWebAPIUtils.js&#10;NewPollPage&#9;FILE&#9;file://K:/Tally/src/components/NewPollPage/NewPollPage.js&#10;UserWeb&#9;FILE&#9;file://K:/Tally/src/utils/UserWebAPIUtils.js&#10;MyPo&#9;FILE&#9;file://K:/Tally/src/components/MyPollsPage/MyPollsPage.js&#10;LatestPolls.js&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;polls&#9;FILE&#9;file://E:/Tally/src/api/polls.js&#10;routes.js&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;MyPol&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.js&#10;Pollstore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;EditPollPage.js&#9;FILE&#9;file://E:/Tally/src/components/EditPollPage/EditPollPage.js&#10;utils.js&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;Pollinfo&#9;FILE&#9;file://E:/Tally/src/components/PollInfoPage/PollInfoPage.js&#10;PollInfor&#9;null&#9;null&#10;PollWeb&#9;FILE&#9;file://E:/Tally/src/utils/PollWebAPIUtils.js&#10;newPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;users.js&#9;FILE&#9;file://E:/Tally/src/api/users.js&#10;polls.js&#9;FILE&#9;file://E:/Tally/src/api/polls.js&#10;packag&#9;FILE&#9;file://E:/Tally/package.json&#10;packa&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/package.json&#10;App.js&#9;FILE&#9;file://E:/Tally/src/app.js&#10;LoginPage&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;UserStore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;userstore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;Login&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;NewPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;app.js&#9;FILE&#9;file://E:/Tally/src/components/App/App.js&#10;Latestpo.css&#9;FILE&#9;file://E:/Tally/src/components/LatestPolls/LatestPolls.css&#10;navigation.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;Navigation.css&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.css&#10;PollStore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;route.&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;Run&#9;ACTION&#9;ActivateRunToolWindow&#10;router&#9;FILE&#9;file://E:/Tally/node_modules/browser-sync/node_modules/browser-sync-ui/node_modules/weinre/node_modules/express/node_modules/connect/lib/middleware/router.js&#10;naviga.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;mypolls.css&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.css&#10;Poll&#9;FILE&#9;file://K:/Tally/src/utils/PollWebAPIUtils.js&#10;lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;log&#9;FILE&#9;file://K:/Tally/src/components/LoginPage/LoginPage.js&#10;Lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;pollstore&#9;FILE&#9;file://K:/Tally/src/stores/PollStore.js&#10;poll.js&#9;FILE&#9;file://K:/Tally/src/utils/PollWebAPIUtils.js&#10;footer&#9;FILE&#9;file://E:/Tally/src/components/Footer/Footer.js&#10;Na&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;utils&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;PollSto&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;PollW&#9;FILE&#9;file://E:/Tally/src/utils/PollWebAPIUtils.js&#10;Web&#9;FILE&#9;file://E:/Tally/src/utils/UserWebAPIUtils.js&#10;pollac&#9;FILE&#9;file://E:/Tally/src/actions/PollActions.js" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="276" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="305" />
@@ -414,13 +312,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="J:\Tally\src\constants" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Tally\src\components\EditPollPage" />
       <recent name="E:\Tally\src\components\MyPollsPage" />
       <recent name="E:\Tally\src\components\NewPollPage" />
       <recent name="K:\Tally\src\components\Poll" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="J:\Tally\src\constants" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Run Start">
@@ -529,17 +428,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="40" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1780822" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17735043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33005464" sideWeight="0.50427353" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32568306" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09641728" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32575756" sideWeight="0.4957265" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32568306" sideWeight="0.4957265" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5092091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -547,7 +447,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -569,46 +468,26 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js</url>
-          <line>103</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="43" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tools/lib/copy.js">
+    <entry file="file://$PROJECT_DIR$/src/stores/PollStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/copy.js">
+    <entry file="file://$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47433037">
-          <caret line="25" column="96" selection-start-line="25" selection-start-column="96" selection-end-line="25" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RegisterPage/RegisterPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.100115076">
-          <caret line="77" column="49" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RegisterPage/RegisterPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09497207">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -734,23 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.6666665">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/server.js.map">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.157171">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -765,14 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -784,9 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,9 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.22767857">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,21 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +700,7 @@
         <state vertical-scroll-proportion="0.3984375">
           <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -873,15 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09770115">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/UserWebAPIUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018973215">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8241379">
           <caret line="90" column="29" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,44 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11383928">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#329#370#0" expanded="false" />
-            <element signature="e#491#563#0" expanded="false" />
-            <element signature="e#600#628#0" expanded="false" />
-            <element signature="n#!!block;n#isUsernameAvailable#0" expanded="false" />
-            <element signature="n#!!block;n#isUsernameSwearWord#0" expanded="false" />
-            <element signature="n#!!block;n#processRegisterCommand#0" expanded="false" />
-            <element signature="e#865#1239#0" expanded="false" />
-            <element signature="e#915#1151#0" expanded="false" />
-            <element signature="e#993#1057#0" expanded="false" />
-            <element signature="e#1063#1128#0" expanded="false" />
-            <element signature="n#!!block;n#createNewUser#0" expanded="false" />
-            <element signature="e#1491#1751#0" expanded="false" />
-            <element signature="e#1800#2069#0" expanded="false" />
-            <element signature="e#1911#1961#0" expanded="false" />
-            <element signature="e#1967#2067#0" expanded="false" />
-            <element signature="e#2111#2150#0" expanded="false" />
-            <element signature="e#2226#2349#0" expanded="false" />
-            <element signature="e#2239#2295#0" expanded="false" />
-            <element signature="e#2389#2481#0" expanded="false" />
-            <element signature="e#2500#3000#0" expanded="false" />
-            <element signature="e#2544#2550#0" expanded="false" />
-            <element signature="e#2592#2855#0" expanded="false" />
-            <element signature="e#2638#2785#0" expanded="false" />
-            <element signature="e#2683#2779#0" expanded="false" />
-            <element signature="e#2905#2998#0" expanded="false" />
-            <element signature="e#2950#2976#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NewPollPage/NewPollPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3470982">
-          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -942,86 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64508927">
           <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LoginPage/LoginPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding>
-            <element signature="e#1#73#0" expanded="false" />
-            <element signature="e#433#481#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#LoginPage#0" expanded="false" />
-            <element signature="e#542#588#0" expanded="false" />
-            <element signature="n#!!block;n#_onChange#0;n#LoginPage#0" expanded="false" />
-            <element signature="n#!!block;n#_handleLogin#0;n#LoginPage#0" expanded="false" />
-            <element signature="e#952#1038#0" expanded="false" />
-            <element signature="e#1086#1455#0" expanded="false" />
-            <element signature="e#1105#1174#0" expanded="false" />
-            <element signature="e#1180#1447#0" expanded="false" />
-            <element signature="e#1230#1244#0" expanded="false" />
-            <element signature="e#1250#1437#0" expanded="false" />
-            <element signature="e#1264#1284#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#LoginPage#0" expanded="false" />
-            <element signature="e#1559#2246#0" expanded="false" />
-            <element signature="e#1595#2233#0" expanded="false" />
-            <element signature="e#1670#2218#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stores/PollStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/PollWebAPIUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#336#624#0" expanded="false" />
-            <element signature="e#355#427#0" expanded="false" />
-            <element signature="e#433#616#0" expanded="false" />
-            <element signature="e#528#542#0" expanded="false" />
-            <element signature="e#548#606#0" expanded="false" />
-            <element signature="e#668#1303#0" expanded="false" />
-            <element signature="e#807#1297#0" expanded="false" />
-            <element signature="e#826#897#0" expanded="false" />
-            <element signature="e#903#1289#0" expanded="false" />
-            <element signature="e#998#1217#0" expanded="false" />
-            <element signature="e#1112#1205#0" expanded="false" />
-            <element signature="e#1223#1279#0" expanded="false" />
-            <element signature="e#1327#1734#0" expanded="false" />
-            <element signature="e#1397#1425#0" expanded="false" />
-            <element signature="e#1760#2616#0" expanded="false" />
-            <element signature="e#2210#2578#0" expanded="false" />
-            <element signature="e#2237#2325#0" expanded="false" />
-            <element signature="e#2331#2562#0" expanded="false" />
-            <element signature="e#2442#2464#0" expanded="false" />
-            <element signature="e#2470#2544#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34151787">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,14 +737,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.203125">
           <caret line="110" column="18" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LoginPage/LoginPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1328125">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EditPollPage/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07816092">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/deploy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stores/PollStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018973215">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4877232">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6574713">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.475382">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NewPollPage/NewPollPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30326945">
+          <caret line="81" column="16" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25591883">
+          <caret line="71" column="31" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MyPollsPage/MyPollsPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.052987598">
+          <caret line="116" column="35" selection-start-line="116" selection-start-column="35" selection-end-line="116" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/UserWebAPIUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/PollWebAPIUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/polls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14955357">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="202" column="9" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#rand#0" expanded="false" />
             <element signature="e#232#1652#0" expanded="false" />
@@ -1054,31 +855,55 @@
             <element signature="e#2026#2116#0" expanded="false" />
             <element signature="e#2080#2110#0" expanded="false" />
             <element signature="n#!!block;n#getPoll#0" expanded="false" />
+            <element signature="e#2282#2348#0" expanded="false" />
             <element signature="e#2313#2344#0" expanded="false" />
+            <element signature="n#!!block;n#castVote#0" expanded="false" />
+            <element signature="e#2449#2627#0" expanded="false" />
+            <element signature="e#2505#2623#0" expanded="false" />
+            <element signature="e#2553#2617#0" expanded="false" />
             <element signature="n#!!block;n#createPoll#0" expanded="false" />
             <element signature="e#2776#3134#0" expanded="false" />
             <element signature="e#2792#3028#0" expanded="false" />
             <element signature="e#3140#3164#0" expanded="false" />
             <element signature="e#3204#3279#0" expanded="false" />
+            <element signature="e#3323#4222#0" expanded="false" />
+            <element signature="e#3341#3411#0" expanded="false" />
+            <element signature="e#3417#3464#0" expanded="false" />
+            <element signature="e#3513#4141#0" expanded="false" />
+            <element signature="e#3638#3727#0" expanded="false" />
+            <element signature="e#3733#4137#0" expanded="false" />
             <element signature="e#3795#4044#0" expanded="false" />
             <element signature="e#4050#4131#0" expanded="false" />
+            <element signature="e#4147#4220#0" expanded="false" />
             <element signature="e#4266#4647#0" expanded="false" />
             <element signature="e#4344#4414#0" expanded="false" />
             <element signature="e#4520#4560#0" expanded="false" />
             <element signature="e#4566#4645#0" expanded="false" />
-            <element signature="e#4694#5258#0" expanded="false" />
-            <element signature="e#5293#5355#0" expanded="false" />
+            <element signature="e#5655#6219#0" expanded="false" />
+            <element signature="e#5735#6146#0" expanded="false" />
+            <element signature="e#5838#5958#0" expanded="false" />
+            <element signature="e#5879#5932#0" expanded="false" />
+            <element signature="e#5976#6073#0" expanded="false" />
+            <element signature="e#6079#6142#0" expanded="false" />
+            <element signature="e#6152#6217#0" expanded="false" />
+            <element signature="e#6254#6316#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MyPollsPage/MyPollsPage.js">
+    <entry file="file://$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3984375">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.18038331">
+          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>

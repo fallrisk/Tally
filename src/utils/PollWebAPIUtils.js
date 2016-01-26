@@ -92,5 +92,39 @@ export default {
           }
         }
       });
+  },
+  updatePoll: (poll) => {
+    request.post(API_URL + '/update')
+      .timeout(2000)
+      .send({
+        pollId: poll.id,
+        name: poll.name,
+        options: poll.options
+      })
+      .end((err, res) => {
+        if (err) {
+          console.log(err);
+        } else {
+          if (res.body.hasOwnProperty('error')) {
+            console.log('Error occurred creating the new poll.');
+          } else {
+            console.log('Update complete. Now loading polls.');
+            return request.get(API_URL)
+              .timeout(2000)
+              .end( (err, res) => {
+                if (err) {
+                  console.log('Error occurred getting Polls.', err);
+                } else {
+                  if (res.body.hasOwnProperty('error')) {
+                    console.log('Error updating polls after an update.');
+                  } else {
+                    console.log('Got data.', res.body);
+                    PollActions.receiveAll(res.body);
+                  }
+                }
+              });
+          }
+        }
+      });
   }
 };

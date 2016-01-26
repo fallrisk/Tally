@@ -65,6 +65,8 @@ class Poll extends Component {
         </a>
         <span>·</span>
         <a className="MyPollsPage-pollLink" href="#" onClick={this.props.onDelete.bind(this, this.props.id)}>Delete</a>
+        <span>·</span>
+        <a className="MyPollsPage-pollLink" href={'/polls/edit/' + this.props.id} onClick={Link.handleClick}>Edit</a>
       </div>
     );
   }

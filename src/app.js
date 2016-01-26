@@ -72,8 +72,8 @@ function run() {
   const setPageOffset = () => {
     currentLocation.state = currentLocation.state || Object.create(null);
     if (supportPageOffset) {
-      currentLocation.state.scrollX = window.pageXOffset;
-      currentLocation.state.scrollY = window.pageYOffset;
+      //currentLocation.state.scrollX = window.pageXOffset;
+      //currentLocation.state.scrollY = window.pageYOffset;
     } else {
       currentLocation.state.scrollX = isCSS1Compat ?
         document.documentElement.scrollLeft : document.body.scrollLeft;

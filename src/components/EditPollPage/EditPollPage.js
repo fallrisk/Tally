@@ -5,7 +5,7 @@
 import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import withStyles from '../../decorators/withStyles';
-import styles from './NewPollPage.css';
+import styles from './EditPollPage.css';
 import PollStore from '../../stores/PollStore';
 import UserStore from '../../stores/UserStore';
 import Link from '../Link';
@@ -14,7 +14,7 @@ import PollWebAPIUtils from '../../utils/PollWebAPIUtils';
 import Location from '../../core/Location';
 
 @withStyles(styles)
-class NewPollPage extends Component {
+class EditPollPage extends Component {
 
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired,
@@ -30,6 +30,17 @@ class NewPollPage extends Component {
     this._addOption = this._addOption.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
     this._removeOption = this._removeOption.bind(this);
+    this._getPollFromStore = this._getPollFromStore.bind(this);
+  }
+
+  _getPollFromStore() {
+    var poll = PollStore.get(this.props.pollId);
+    console.log('From store ',poll);
+    this.setState({name: poll.pollName, options: poll.pollOptions, id: poll.id});
+  }
+
+  componentDidMount() {
+    this._getPollFromStore();
   }
 
   _onChange(i, e) {
@@ -65,20 +76,21 @@ class NewPollPage extends Component {
     e.preventDefault();
     // On a submit build the poll options from the input boxes, but remove the options
     // that are empty.
-    PollWebAPIUtils.createPoll({
+    PollWebAPIUtils.updatePoll({
       name: this.state.name,
-      options: this.state.options
+      options: this.state.options,
+      id: this.state.id
     });
     Location.pushState('/polls/user/' + UserStore.get().username);
   }
 
   render() {
-    const title = 'New Poll';
+    const title = 'Editing Poll ' + this.state.name;
     this.context.onSetTitle(title);
 
     var pollOptionNodes = this.state.options.map((option, i) => {
       return (
-        <div key={i} className="NewPollPage-formGroup">
+        <div key={i} className="EditPollPage-formGroup">
           <input type="text" placeholder={'Poll Option ' + i}
                  onChange={this._onChange.bind(this, i)} value={option} />
           <button type="button" onClick={this._removeOption.bind(this, i)}>Remove</button>
@@ -87,19 +99,19 @@ class NewPollPage extends Component {
     });
 
     return (
-      <div className="NewPollPage">
-        <div className="NewPollPage-container">
+      <div className="EditPollPage">
+        <div className="EditPollPage-container">
           <h1>{title}</h1>
           <form method="POST" onSubmit={this._handleSubmit}>
-            <input type="text" name="name" placeholder="Poll Name" onChange={this._onChange.bind(this, undefined)} />
-            <div className="NewPollPage-pollOptionsContainer">
+            <input type="text" name="name" placeholder="Poll Name" value={this.state.name}
+                   onChange={this._onChange.bind(this, undefined)} />
+            <div className="EditPollPage-pollOptionsContainer">
               {pollOptionNodes}
             </div>
-            <div className="NewPollPage-buttonGroup">
+            <div className="EditPollPage-buttonGroup">
               <button type="button" onClick={this._addOption}>Add Option</button>
               <button type="button">Cancel</button>
-              <button type="button">Clear Form</button>
-              <button type="submit">Create Poll</button>
+              <button type="submit">Update Poll</button>
             </div>
           </form>
         </div>
@@ -109,4 +121,4 @@ class NewPollPage extends Component {
 
 }
 
-export default NewPollPage;
+export default EditPollPage;
