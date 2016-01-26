@@ -89,6 +89,6 @@
     "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.error(err.stack))\"",
     "serve": "babel-node --eval \"require('./tools/serve')().catch(err => console.error(err.stack))\"",
     "start": "babel-node --eval \"require('./tools/start')().catch(err => console.error(err.stack))\"",
-    "deploy:heroku": "npm run deploy -- production"
+    "deployheroku": "npm run deploy -- production"
   }
 }
