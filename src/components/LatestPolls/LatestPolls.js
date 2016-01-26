@@ -17,9 +17,11 @@ class PollChart extends Component {
       width: '95%',
       height: '30'
     }, this.getChartState());
+    console.log('LatestPolls/Poll/PollChart constructed.');
   }
 
   componentDidUpdate() {
+    console.log('LatestPolls/Poll/PollChart updated.');
     var ele = ReactDOM.findDOMNode(this);
     D3PollChart.update(ele, this.getChartState(), 30);
   }
@@ -50,6 +52,11 @@ class Poll extends Component {
     this.state = {
       tweet: 'Vote on this poll I saw at http://localhost:3000/poll/'
     }
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
+  }
+
+  componentDidUpdate() {
+    console.log('LatestPolls/Poll updated.');
   }
 
   render() {
