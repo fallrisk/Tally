@@ -36,7 +36,7 @@ var D3PollChart = {
     var svg = d3.select(ele).selectAll('svg');
 
     // Check the height of the svg make sure it fits the new poll options.
-    console.log('svg->height=' + svg.attr('height') + ',' + data.length * barHeight);
+    //console.log('svg->height=' + svg.attr('height') + ',' + data.length * barHeight);
     if (parseInt(svg.attr('height')) < data.length * barHeight) {
       svg.attr('height', data.length * barHeight);
     }

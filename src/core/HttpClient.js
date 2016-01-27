@@ -14,7 +14,9 @@ function getUrl(path) {
 }
 
 const HttpClient = {
-
+  getUrl: path => {
+    return getUrl(path);
+  },
   get: path => new Promise((resolve, reject) => {
     request
       .get(getUrl(path))

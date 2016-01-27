@@ -2,13 +2,30 @@
 import dispatcher from '../core/Dispatcher';
 import request from 'superagent';
 import PollActions from '../actions/PollActions';
+import http from '../core/HttpClient';
 
-const API_URL = 'http://localhost:3000/api/polls';
+function getApiUrl(path) {
+  if (typeof path === 'undefined') {
+    path = '';
+  }
+  //console.log(global.server);
+  //return process.env.WEBSITE_HOSTNAME ?
+  //  `http://${process.env.WEBSITE_HOSTNAME}${path}` :
+  //  `http://127.0.0.1:${global.server.settings.port}${path}`;
+  if (typeof window !== 'undefined') {
+    return 'http://' + window.location.hostname + ':' + window.location.port + path;
+  } else if (typeof process.env.WEBSITE_HOSTNAME !== 'undefined') {
+    return process.env.WEBSITE_HOSTNAME + path;
+  } else {
+    return '';
+  }
+}
 
 export default {
   getAllPolls: () => {
     console.log('Requested All Polls.');
-    request.get(API_URL)
+    console.log(getApiUrl('/api/polls'));
+    request.get(getApiUrl('/api/polls'))
       .timeout(2000)
       .end( (err, res) => {
         if (err) {
@@ -24,7 +41,7 @@ export default {
       });
   },
   castVote: (pollId, voteChoice) => {
-    request.get(API_URL + '/vote')
+    request.get(getApiUrl('/api/polls/vote'))
       .timeout(2000)
       .query({pollId: pollId, voteChoice: voteChoice})
       .end( (err, res) => {
@@ -44,7 +61,7 @@ export default {
       });
   },
   createPoll: poll => {
-    request.post(API_URL + '/new')
+    request.post(getApiUrl('/api/polls/new'))
       .timeout(2000)
       .send({
         poll: poll
@@ -63,7 +80,7 @@ export default {
   },
   deletePoll: pollId => {
     var self = this;
-    request.post(API_URL + '/delete')
+    request.post(getApiUrl('/api/polls/delete'))
       .timeout(2000)
       .send({
         pollId: pollId
@@ -75,7 +92,7 @@ export default {
           if (res.body.hasOwnProperty('error')) {
             console.log('Error occurred creating the new poll.');
           } else {
-            request.get(API_URL)
+            request.get(getApiUrl('/api/polls'))
               .timeout(2000)
               .end( (err, res) => {
                 if (err) {
@@ -94,7 +111,7 @@ export default {
       });
   },
   updatePoll: (poll) => {
-    request.post(API_URL + '/update')
+    request.post(getApiUrl('/api/update'))
       .timeout(2000)
       .send({
         pollId: poll.id,
@@ -109,7 +126,7 @@ export default {
             console.log('Error occurred creating the new poll.');
           } else {
             console.log('Update complete. Now loading polls.');
-            return request.get(API_URL)
+            return request.get(getApiUrl('/api/polls'))
               .timeout(2000)
               .end( (err, res) => {
                 if (err) {
