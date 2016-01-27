@@ -7,8 +7,6 @@ import request from 'superagent';
 //import PollActions from '../actions/PollActions';
 import UserActions from '../actions/UserActions';
 
-const API_URL = 'http://localhost:3000/api/users';
-
 function getApiUrl(path) {
   if (typeof path === 'undefined') {
     path = '';

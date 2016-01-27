@@ -34,7 +34,7 @@ class LoginPage extends Component {
   _handleLogin(e) {
     e.preventDefault();
     var self = this;
-    request.post('http://localhost:3000/api/users/login')
+    request.post('/api/users/login')
       .send({
         username: this.state.username,
         password: this.state.password

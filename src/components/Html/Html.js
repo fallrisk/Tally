@@ -40,7 +40,7 @@ class Html extends Component {
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <script src="//d3js.org/d3.v3.min.js" charSet="utf-8"></script>
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="//labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <!-- <script src="//labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
         <style id="css" dangerouslySetInnerHTML={{__html: this.props.css}} />
       </head>

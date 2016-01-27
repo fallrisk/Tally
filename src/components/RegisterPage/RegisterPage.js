@@ -29,7 +29,7 @@ class RegisterPage extends Component {
   _handleSubmit(e) {
     e.preventDefault();
     var self = this;
-    request.post('http://localhost:3000/api/users/register')
+    request.post('/api/users/register')
       .send({
         username: this.state.username,
         password: this.state.password
