@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9739c5-06da-41b2-8b97-348558085279" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/PollWebAPIUtils.js" afterPath="$PROJECT_DIR$/src/utils/PollWebAPIUtils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" afterPath="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" />
     </list>
     <ignored path="Tally.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,82 +23,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.538462">
-              <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PollWebAPIUtils.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PollWebAPIUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/PollWebAPIUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17171717">
-              <caret line="113" column="39" selection-start-line="113" selection-start-column="39" selection-end-line="113" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserWebAPIUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/UserWebAPIUtils.js">
+      <file leaf-file-name="LatestPolls.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-              <folding />
+            <state vertical-scroll-proportion="0.7154882">
+              <caret line="53" column="132" selection-start-line="53" selection-start-column="132" selection-end-line="53" selection-end-column="132" />
+              <folding>
+                <marker date="1453857026000" expanded="true" signature="1647:2158" placeholder="..." />
+                <marker date="1453857026000" expanded="true" signature="2083:2145" placeholder="..." />
+                <marker date="1453857026000" expanded="true" signature="3481:3686" placeholder="..." />
+                <marker date="1453857026000" expanded="true" signature="3529:3673" placeholder="..." />
+                <marker date="1453857026000" expanded="true" signature="3617:3658" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LoginPage/LoginPage.js">
+      <file leaf-file-name="HttpClient.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/HttpClient.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RegisterPage/RegisterPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Html.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Html/Html.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="30" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="30" />
-              <folding />
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,7 +119,6 @@
         <option value="$PROJECT_DIR$/src/components/EditPollPage/EditPollPage.js" />
         <option value="$PROJECT_DIR$/src/api/polls.js" />
         <option value="$PROJECT_DIR$/src/components/PollInfoPage/PollInfoPage.js" />
-        <option value="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" />
         <option value="$PROJECT_DIR$/tools/deploy.js" />
         <option value="$PROJECT_DIR$/src/public/utils.js" />
         <option value="$PROJECT_DIR$/src/core/HttpClient.js" />
@@ -171,6 +128,7 @@
         <option value="$PROJECT_DIR$/src/components/LoginPage/LoginPage.js" />
         <option value="$PROJECT_DIR$/src/components/Html/Html.js" />
         <option value="$PROJECT_DIR$/src/utils/PollWebAPIUtils.js" />
+        <option value="$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js" />
       </list>
     </option>
   </component>
@@ -301,7 +259,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="js-jscs-package" value="C:\Users\Justin\WebstormProjects\Tally\node_modules\jscs" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="Register&#9;null&#9;null&#10;LoginPage.&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;UserWe&#9;FILE&#9;file://E:/Tally/src/utils/UserWebAPIUtils.js&#10;routes.js&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;HttpClient&#9;FILE&#9;file://E:/Tally/src/core/HttpClient.js&#10;utils.js&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;utils.&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;PollInfoPage&#9;FILE&#9;file://K:/Tally/src/components/PollInfoPage/PollInfoPage.js&#10;Latest&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;UserW&#9;FILE&#9;file://K:/Tally/src/utils/UserWebAPIUtils.js&#10;NewPollPage&#9;FILE&#9;file://K:/Tally/src/components/NewPollPage/NewPollPage.js&#10;UserWeb&#9;FILE&#9;file://K:/Tally/src/utils/UserWebAPIUtils.js&#10;MyPo&#9;FILE&#9;file://K:/Tally/src/components/MyPollsPage/MyPollsPage.js&#10;LatestPolls.js&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;polls&#9;FILE&#9;file://E:/Tally/src/api/polls.js&#10;MyPol&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.js&#10;Pollstore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;EditPollPage.js&#9;FILE&#9;file://E:/Tally/src/components/EditPollPage/EditPollPage.js&#10;Pollinfo&#9;FILE&#9;file://E:/Tally/src/components/PollInfoPage/PollInfoPage.js&#10;PollInfor&#9;null&#9;null&#10;PollWeb&#9;FILE&#9;file://E:/Tally/src/utils/PollWebAPIUtils.js&#10;newPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;users.js&#9;FILE&#9;file://E:/Tally/src/api/users.js&#10;polls.js&#9;FILE&#9;file://E:/Tally/src/api/polls.js&#10;packag&#9;FILE&#9;file://E:/Tally/package.json&#10;packa&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/package.json&#10;App.js&#9;FILE&#9;file://E:/Tally/src/app.js&#10;LoginPage&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;UserStore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;userstore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;Login&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;NewPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;app.js&#9;FILE&#9;file://E:/Tally/src/components/App/App.js&#10;Latestpo.css&#9;FILE&#9;file://E:/Tally/src/components/LatestPolls/LatestPolls.css&#10;navigation.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;Navigation.css&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.css&#10;PollStore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;route.&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;Run&#9;ACTION&#9;ActivateRunToolWindow&#10;router&#9;FILE&#9;file://E:/Tally/node_modules/browser-sync/node_modules/browser-sync-ui/node_modules/weinre/node_modules/express/node_modules/connect/lib/middleware/router.js&#10;naviga.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;mypolls.css&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.css&#10;Poll&#9;FILE&#9;file://K:/Tally/src/utils/PollWebAPIUtils.js&#10;lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;log&#9;FILE&#9;file://K:/Tally/src/components/LoginPage/LoginPage.js&#10;Lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;pollstore&#9;FILE&#9;file://K:/Tally/src/stores/PollStore.js&#10;poll.js&#9;FILE&#9;file://K:/Tally/src/utils/PollWebAPIUtils.js&#10;footer&#9;FILE&#9;file://E:/Tally/src/components/Footer/Footer.js&#10;Na&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js" />
+    <property name="SearchEverywhereHistoryKey" value="HttpClie&#9;FILE&#9;file://E:/Tally/src/core/HttpClient.js&#10;Html&#9;FILE&#9;file://E:/Tally/src/components/Html/Html.js&#10;LatestPolls&#9;FILE&#9;file://E:/Tally/src/components/LatestPolls/LatestPolls.js&#10;Register&#9;null&#9;null&#10;LoginPage.&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;UserWe&#9;FILE&#9;file://E:/Tally/src/utils/UserWebAPIUtils.js&#10;routes.js&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;HttpClient&#9;FILE&#9;file://E:/Tally/src/core/HttpClient.js&#10;utils.js&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;utils.&#9;FILE&#9;file://E:/Tally/src/public/utils.js&#10;PollInfoPage&#9;FILE&#9;file://K:/Tally/src/components/PollInfoPage/PollInfoPage.js&#10;Latest&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;UserW&#9;FILE&#9;file://K:/Tally/src/utils/UserWebAPIUtils.js&#10;NewPollPage&#9;FILE&#9;file://K:/Tally/src/components/NewPollPage/NewPollPage.js&#10;UserWeb&#9;FILE&#9;file://K:/Tally/src/utils/UserWebAPIUtils.js&#10;MyPo&#9;FILE&#9;file://K:/Tally/src/components/MyPollsPage/MyPollsPage.js&#10;LatestPolls.js&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;polls&#9;FILE&#9;file://E:/Tally/src/api/polls.js&#10;MyPol&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.js&#10;Pollstore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;EditPollPage.js&#9;FILE&#9;file://E:/Tally/src/components/EditPollPage/EditPollPage.js&#10;Pollinfo&#9;FILE&#9;file://E:/Tally/src/components/PollInfoPage/PollInfoPage.js&#10;PollInfor&#9;null&#9;null&#10;PollWeb&#9;FILE&#9;file://E:/Tally/src/utils/PollWebAPIUtils.js&#10;newPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;users.js&#9;FILE&#9;file://E:/Tally/src/api/users.js&#10;polls.js&#9;FILE&#9;file://E:/Tally/src/api/polls.js&#10;packag&#9;FILE&#9;file://E:/Tally/package.json&#10;packa&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/package.json&#10;App.js&#9;FILE&#9;file://E:/Tally/src/app.js&#10;LoginPage&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;UserStore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;userstore&#9;FILE&#9;file://E:/Tally/src/stores/UserStore.js&#10;Login&#9;FILE&#9;file://E:/Tally/src/components/LoginPage/LoginPage.js&#10;NewPoll&#9;FILE&#9;file://E:/Tally/src/components/NewPollPage/NewPollPage.js&#10;app.js&#9;FILE&#9;file://E:/Tally/src/components/App/App.js&#10;Latestpo.css&#9;FILE&#9;file://E:/Tally/src/components/LatestPolls/LatestPolls.css&#10;navigation.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;Navigation.css&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.css&#10;PollStore&#9;FILE&#9;file://E:/Tally/src/stores/PollStore.js&#10;route.&#9;FILE&#9;file://E:/Tally/src/routes.js&#10;Run&#9;ACTION&#9;ActivateRunToolWindow&#10;router&#9;FILE&#9;file://E:/Tally/node_modules/browser-sync/node_modules/browser-sync-ui/node_modules/weinre/node_modules/express/node_modules/connect/lib/middleware/router.js&#10;naviga.js&#9;FILE&#9;file://E:/Tally/src/components/Navigation/Navigation.js&#10;mypolls.css&#9;FILE&#9;file://E:/Tally/src/components/MyPollsPage/MyPollsPage.css&#10;Poll&#9;FILE&#9;file://K:/Tally/src/utils/PollWebAPIUtils.js&#10;lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;log&#9;FILE&#9;file://K:/Tally/src/components/LoginPage/LoginPage.js&#10;Lates&#9;FILE&#9;file://K:/Tally/src/components/LatestPolls/LatestPolls.js&#10;pollstore&#9;FILE&#9;file://K:/Tally/src/stores/PollStore.js" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="276" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="305" />
@@ -727,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/deploy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -822,24 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/HttpClient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22895622">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Html/Html.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -858,9 +791,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/PollWebAPIUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17171717">
-          <caret line="113" column="39" selection-start-line="113" selection-start-column="39" selection-end-line="113" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Html/Html.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45791245">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/HttpClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LatestPolls/LatestPolls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7154882">
+          <caret line="53" column="132" selection-start-line="53" selection-start-column="132" selection-end-line="53" selection-end-column="132" />
+          <folding>
+            <marker date="1453857026000" expanded="true" signature="1647:2158" placeholder="..." />
+            <marker date="1453857026000" expanded="true" signature="2083:2145" placeholder="..." />
+            <marker date="1453857026000" expanded="true" signature="3481:3686" placeholder="..." />
+            <marker date="1453857026000" expanded="true" signature="3529:3673" placeholder="..." />
+            <marker date="1453857026000" expanded="true" signature="3617:3658" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

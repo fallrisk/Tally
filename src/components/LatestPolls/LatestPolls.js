@@ -49,8 +49,12 @@ class PollChart extends Component {
 class Poll extends Component {
   constructor(props) {
     super(props);
+    var url = '';
+    if (typeof window !== 'undefined') {
+      url = window.location.protocol + '//' + window.location.hostname + ((window.location.port !== '') ? window.location.port: '');
+    }
     this.state = {
-      tweet: 'Vote on this poll I saw at http://localhost:3000/poll/'
+      tweet: `Vote on this poll I saw at ${url}/poll/`
     }
     this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
