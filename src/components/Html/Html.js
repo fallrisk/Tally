@@ -38,10 +38,10 @@ class Html extends Component {
         <meta name="description" content={this.props.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <script src="http://d3js.org/d3.v3.min.js" charSet="utf-8"></script>
+        <script src="//d3js.org/d3.v3.min.js" charSet="utf-8"></script>
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <script src="//labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
         <style id="css" dangerouslySetInnerHTML={{__html: this.props.css}} />
       </head>
       <body>

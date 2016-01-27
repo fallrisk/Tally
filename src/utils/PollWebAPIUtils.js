@@ -13,7 +13,7 @@ function getApiUrl(path) {
   //  `http://${process.env.WEBSITE_HOSTNAME}${path}` :
   //  `http://127.0.0.1:${global.server.settings.port}${path}`;
   if (typeof window !== 'undefined') {
-    return 'http://' + window.location.hostname + ':' + window.location.port + path;
+    return window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + path;
   } else if (typeof process.env.WEBSITE_HOSTNAME !== 'undefined') {
     return process.env.WEBSITE_HOSTNAME + path;
   } else {
