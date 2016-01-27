@@ -111,7 +111,7 @@ export default {
       });
   },
   updatePoll: (poll) => {
-    request.post(getApiUrl('/api/update'))
+    request.post(getApiUrl('/api/polls/update'))
       .timeout(2000)
       .send({
         pollId: poll.id,
